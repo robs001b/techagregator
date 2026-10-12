@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07090C">
+<title>TechAgregator</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preload" href="/techagregator/static/fonts/IBMPlexMono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/techagregator/static/fonts/IBMPlexSans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/techagregator/static/fonts/fonts.css">
+<link rel="stylesheet" href="/techagregator/static/style.css?v=v9-0">
+
+</head>
+<body class="" data-static="1" data-base="/techagregator">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo-amber" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values=".2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues=".027 .04 .07 .11 .16 .22 .29 .36 .44 .6 1"/><feFuncG type="table" tableValues=".035 .05 .08 .12 .17 .23 .3 .37 .45 .6 .69"/><feFuncB type="table" tableValues=".047 .06 .09 .13 .18 .24 .31 .38 .46 .45 0"/></feComponentTransfer></filter></svg>
+<a class="skip" href="#main">Przejdź do treści</a>
+<header class="topbar frame">
+  <button class="menu-btn" type="button" data-panel-open aria-controls="panel" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>KANAŁY</span></button>
+  <a class="logo" href="/techagregator/" aria-label="TechAgregator">TECH<span class="acc">A</span>GREGATOR</a>
+  <div class="top-right">
+    <span class="clock" aria-label="Czas lokalny"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><time data-clock>--:--:--</time></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="status ok" title="12.10 12:00">
+      <button type="button" class="bot" id="bot" data-mood="happy" data-ok="1"
+        data-label-ok="ONLINE" data-label-bad="OFFLINE"
+        aria-controls="sonda-log" aria-expanded="false"
+        aria-label="ONLINE"
+        title="ONLINE">
+        <svg class="bot-svg" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true" focusable="false">
+          <defs><filter id="bot-shadow" x="-20%" y="-10%" width="140%" height="140%"><feDropShadow dx="0" dy="1.2" stdDeviation="1.1" flood-color="#000" flood-opacity=".55"/></filter></defs>
+          <g class="bot-face" filter="url(#bot-shadow)">
+            <rect class="bot-shell" x="1.25" y="1.25" width="33.5" height="33.5" rx="8.5" ry="8.5"/>
+            <!-- oczy: orby + zrenice; powieki sleep/yawn; luk yawn -->
+            <g class="bot-eye bot-eye-l">
+              <circle class="bot-orb" cx="12" cy="15" r="3.35"/>
+              <circle class="bot-pupil" cx="12.7" cy="14.2" r="1.05"/>
+              <line class="bot-lid-flat" x1="8.6" y1="15" x2="15.4" y2="15"/>
+              <path class="bot-lid-arc" d="M8.8 14.2 A3.4 3.4 0 0 0 15.2 14.2"/>
+            </g>
+            <g class="bot-eye bot-eye-r">
+              <circle class="bot-orb" cx="24" cy="15" r="3.35"/>
+              <circle class="bot-pupil" cx="24.7" cy="14.2" r="1.05"/>
+              <line class="bot-lid-flat" x1="20.6" y1="15" x2="27.4" y2="15"/>
+              <path class="bot-lid-arc" d="M20.8 14.2 A3.4 3.4 0 0 0 27.2 14.2"/>
+            </g>
+            <!-- usta -->
+            <path class="bot-mouth bot-smile" d="M14 23.2 Q18 26.2 22 23.2"/>
+            <ellipse class="bot-mouth bot-yawn-m" cx="18" cy="24.2" rx="3.2" ry="4.1"/>
+            <path class="bot-mouth bot-sad-m" d="M14 25.2 Q18 22.4 22 25.2"/>
+            <!-- zzz -->
+            <g class="bot-zzz" aria-hidden="true">
+              <g class="z z1" transform="translate(20.2 8.2)"><path d="M0 0h3.2M3.2 0L0 3.2M0 3.2h3.2"/></g>
+              <g class="z z2" transform="translate(23.2 5.6) scale(1.15)"><path d="M0 0h3.2M3.2 0L0 3.2M0 3.2h3.2"/></g>
+              <g class="z z3" transform="translate(26.4 2.8) scale(1.3)"><path d="M0 0h3.2M3.2 0L0 3.2M0 3.2h3.2"/></g>
+            </g>
+            <!-- dizzy: krzyzyki w oczach + wirujaca gwiazdka -->
+            <g class="bot-xeye bot-xeye-l" aria-hidden="true">
+              <line x1="9.6" y1="12.6" x2="14.4" y2="17.4"/><line x1="14.4" y1="12.6" x2="9.6" y2="17.4"/>
+            </g>
+            <g class="bot-xeye bot-xeye-r" aria-hidden="true">
+              <line x1="21.6" y1="12.6" x2="26.4" y2="17.4"/><line x1="26.4" y1="12.6" x2="21.6" y2="17.4"/>
+            </g>
+            <g class="bot-spiral" transform="translate(29.5 7)" aria-hidden="true">
+              <path d="M0-2.2 L0.7-0.7 L2.3-0.7 L1 0.3 L1.5 1.8 L0 1 L-1.5 1.8 L-1 0.3 L-2.3-0.7 L-0.7-0.7 Z"/>
+            </g>
+            <!-- think dots -->
+            <g class="bot-think-dots"><circle cx="27.5" cy="8" r=".7"/><circle cx="29.5" cy="5.8" r=".9"/><circle cx="31.8" cy="3.6" r="1.1"/></g>
+          </g>
+        </svg>
+      </button>
+      <span class="status-meta"><b data-count="19">19</b> EVT<span class="win"> / 48H</span></span>
+    </span>
+    <nav class="lang" aria-label="Język"><a href="?lang=pl" class="on" hreflang="pl">PL</a><a href="?lang=en" class="" hreflang="en">EN</a></nav>
+  </div>
+</header>
+<div class="shell">
+
+<aside id="panel" class="panel" aria-label="KANAŁY">
+  <div class="panel-head"><span class="lbl">KANAŁY</span><button class="panel-close" type="button" data-panel-close aria-label="Zamknij"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <aside class="ad frame ticks-box ad-side" aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside>
+  <h2 class="lbl sec ch-h" data-type>KANAŁY</h2>
+  <nav class="channels">
+    <a href="/techagregator/" data-kat="" class="on" aria-current="page"><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7"/><rect x="13.5" y="3.5" width="7" height="7"/><rect x="3.5" y="13.5" width="7" height="7"/><rect x="13.5" y="13.5" width="7" height="7"/></svg><span>WSZYSTKIE</span><b data-ch-all>19</b></a>
+    
+    <a href="/techagregator/?kat=ai" data-kat="ai" class="" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="5" r="1.5"/><circle cx="19.5" cy="5" r="1.5"/><circle cx="4.5" cy="19" r="1.5"/><circle cx="19.5" cy="19" r="1.5"/><path d="M5.6 6.1l4.2 3.8M18.4 6.1l-4.2 3.8M5.6 17.9l4.2-3.8M18.4 17.9l-4.2-3.8"/></svg><span>AI</span><b>1</b></a>
+    
+    <a href="/techagregator/?kat=smartfony" data-kat="smartfony" class="" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="1"/><path d="M11 18.5h2"/></svg><span>SMARTFONY</span><b>3</b></a>
+    
+    <a href="/techagregator/?kat=gry" data-kat="gry" class="" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01M17.32 5H6.68a4 4 0 0 0-3.98 3.59C2.6 9.42 2 14.46 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.55-.6-6.58-.69-7.26A4 4 0 0 0 17.32 5z"/></svg><span>GRY</span><b>3</b></a>
+    
+    <a href="/techagregator/?kat=bezpieczenstwo" data-kat="bezpieczenstwo" class=" alert" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg><span>BEZPIECZEŃSTWO</span><b>1</b></a>
+    
+    <a href="/techagregator/?kat=sprzet" data-kat="sprzet" class="" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="15" height="15"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2.5M15 2v2.5M9 19.5V22M15 19.5V22M2 9h2.5M2 15h2.5M19.5 9H22M19.5 15H22"/></svg><span>SPRZĘT</span><b>5</b></a>
+    
+  </nav>
+  <nav class="lang panel-lang" aria-label="Język"><a href="?lang=pl" class="on" hreflang="pl">PL</a><a href="?lang=en" class="" hreflang="en">EN</a></nav>
+  <form class="filter" action="/techagregator/" method="get" role="search">
+    
+    <label class="lbl" for="q"><svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5l-4.5-4.5"/></svg> Filtruj wydarzenia</label>
+    <input id="q" name="q" type="search" value="" autocomplete="off" spellcheck="false">
+  </form>
+</aside>
+<div class="scrim" data-panel-close hidden></div>
+<main id="main" class="content">
+
+<div class="sec-head">
+  <h1 class="lbl sec" data-type>WYDARZENIA</h1>
+  <span class="lbl mute"><span data-list-count>19</span> EVT · 48H</span>
+</div>
+
+<ol class="rows" data-rows data-kat="" data-q="">
+
+  <li class="evt frame first" id="evt-6f11179877f9" data-key="6f11179877f9" data-code="EVT-5321" data-n="6" data-latest="2026-10-12T10:00:00+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="nvidia rezygnuje z karty graficznej. da nam za to protezę nvidia może zrezygnować z karty graficznej rtx 5090 na rzecz ulepszonego rtx 5080 rtx 5090 znika z rynku. według insiderów jego miejsce zajmie ulepszony rtx 5080 geforce rtx 5090 może zniknąć ze sklepów. ceny już są absurdalne nvidia rezygnuje z karty graficznej. da nam za to protezę nvidia rumoured to replace rtx 5080 with new 24gb model rtx 5090 może zniknąć z półek. nvidia ma szykować dużą zmianę nvidia reportedly halts geforce rtx 5090 production in favor of ai data center and professional gpus" style="--i:0">
+    <a class="thumb" href="/techagregator/podsumowanie/6f11179877f9/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/6f11179877f9-201db9.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/6f11179877f9-201db9.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/6f11179877f9-201db9.webp" alt="" width="800" height="600" fetchpriority="high" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-5321</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/6f11179877f9/">NVIDIA może zrezygnować z karty graficznej RTX 5090 na rzecz ulepszonego RTX 5080</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="6f11179877f9"><span class="roll">6</span>&nbsp;<span class="srcw">ŹRÓDEŁ</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-6f11179877f9" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-10T12:20:00+00:00" data-t0="2026-10-10T12:20:00+00:00" title="pierwsza publikacja 10.10.2026 14:20">10.10, 14:20</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/6f11179877f9/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-6f11179877f9" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/gryonline.png" alt="" width="14" height="14" loading="lazy">Gry-Online</span>
+        <span class="s-txt"><a href="https://www.gry-online.pl/newsroom/rtx-5090-znika-z-rynku-wedlug-insiderow-jego-miejsce-zajmie-uleps/z331ee5" target="_blank" rel="noopener" hreflang="pl">RTX 5090 znika z rynku. Według insiderów jego miejsce zajmie ulepszony RTX 5080</a></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-10-12T10:00:00+00:00">12:00</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/benchmark.png" alt="" width="14" height="14" loading="lazy">Benchmark.pl</span>
+        <span class="s-txt"><a href="https://www.benchmark.pl/rtx-5090-moze-zniknac-ze-sklepow-ceny-juz-sa-absurdalne-7339153246321120a" target="_blank" rel="noopener" hreflang="pl">GeForce RTX 5090 może zniknąć ze sklepów. Ceny już są absurdalne</a></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-10-12T06:39:55+00:00">08:39</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/telepolis.png" alt="" width="14" height="14" loading="lazy">Telepolis</span>
+        <span class="s-txt"><a href="https://www.telepolis.pl/tech/sprzet/nvidia-koniec-geforce-rtx-5090" target="_blank" rel="noopener" hreflang="pl">NVIDIA rezygnuje z karty graficznej. Da nam za to protezę</a><span class="s-lead">NVIDIA zamierza zrezygnować z produkcji kart graficznych GeForce RTX 5090.</span></span>
+        <span class="s-meta"><time datetime="2026-10-12T05:04:00+00:00">07:04</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/kitguru.png" alt="" width="14" height="14" loading="lazy">KitGuru</span>
+        <span class="s-txt"><a href="https://www.kitguru.net/components/graphic-cards/joao-silva/nvidia-rumoured-to-replace-rtx-5080-with-new-24gb-model/" target="_blank" rel="noopener" hreflang="en">Nvidia rumoured to replace RTX 5080 with new 24GB model</a><span class="s-lead">Nvidia is reportedly ceasing production of the GeForce RTX 5090 to redirect its flagship GB202 silicon...</span><span class="s-auth">aut. João Silva</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T14:00:19+00:00">16:00</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/spidersweb.png" alt="" width="14" height="14" loading="lazy">Spider&#39;s Web</span>
+        <span class="s-txt"><a href="https://spidersweb.pl/2026/10/rtx-5090-moze-zniknac-z-polek-nvidia.html" target="_blank" rel="noopener" hreflang="pl">RTX 5090 może zniknąć z półek. Nvidia ma szykować dużą zmianę</a><span class="s-auth">aut. Bogdan Stech</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T10:18:00+00:00">12:18</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tomshw.png" alt="" width="14" height="14" loading="lazy">Tom&#39;s Hardware</span>
+        <span class="s-txt"><a href="https://www.tomshardware.com/pc-components/gpus/nvidia-reportedly-halts-geforce-rtx-5090-production-in-favor-of-ai-data-center-and-professional-gpus-impending-supply-drought-expected-to-drive-up-prices-rtx-5080-24gb-rumored-as-new-gaming-flagship" target="_blank" rel="noopener" hreflang="en">Nvidia reportedly halts GeForce RTX 5090 production in favor of AI data center and professional GPUs</a><span class="s-auth">aut. Anton Shilov</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-10-10T12:20:00+00:00">14:20</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-bee47eaca35b" data-key="bee47eaca35b" data-code="EVT-4155" data-n="3" data-latest="2026-10-12T03:17:03+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="apple announcing homepod mini 2 next week with these new features apple zapowie nowe urządzenia smart home na wydarzeniu 13 października new apple tv might have microphones, homepod will be unsurprising report: apple ‘homeview’ smart home hub will ship in november, come in four colors, a18 chip apple announcing homepod mini 2 next week with these new features" style="--i:1">
+    <a class="thumb" href="/techagregator/podsumowanie/bee47eaca35b/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/bee47eaca35b-4d5e3e.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/bee47eaca35b-4d5e3e.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/bee47eaca35b-4d5e3e.webp" alt="" width="800" height="600" fetchpriority="high" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-4155</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/bee47eaca35b/">Apple zapowie nowe urządzenia smart home na wydarzeniu 13 października</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="bee47eaca35b"><span class="roll">3</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-bee47eaca35b" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-10T13:45:00+00:00" data-t0="2026-10-10T13:45:00+00:00" title="pierwsza publikacja 10.10.2026 15:45">10.10, 15:45</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/bee47eaca35b/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-bee47eaca35b" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/appleinsider.png" alt="" width="14" height="14" loading="lazy">AppleInsider</span>
+        <span class="s-txt"><a href="https://appleinsider.com/articles/26/10/11/new-homepod-mini-and-apple-tv-will-debut-during-homeview-launch?utm_source=rss" target="_blank" rel="noopener" hreflang="en">New Apple TV might have microphones, HomePod will be unsurprising</a><span class="s-lead">While the HomeView home hub will be the headline device, Apple&#39;s &#34;Welcome Home&#34; event will finally debut the...</span><span class="s-auth">aut. William Gallagher</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T14:35:33+00:00">16:35</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/10/11/apple-homeview-home-hub-four-colors-november/" target="_blank" rel="noopener" hreflang="en">Report: Apple ‘HomeView’ smart home hub will ship in November, come in four colors, A18 chip</a><span class="s-lead">Bloomberg’s Mark Gurman today reported that the Apple home hub - set to be announced on October 13 as part of...</span><span class="s-auth">aut. Benjamin Mayo</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T14:09:49+00:00">16:09</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/10/10/apple-to-announce-new-homepod-mini-next-week/" target="_blank" rel="noopener" hreflang="en">Apple Announcing HomePod Mini 2 Next Week With These New Features</a><span class="s-lead">Apple reportedly plans to unveil a new HomePod mini as part of the &#34;Welcome home&#34; experience it announced for...</span><span class="s-auth">aut. Joe Rossignol</span></span>
+        <span class="s-meta"><time datetime="2026-10-10T13:55:00+00:00">15:55</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-acd0e0d1910e" data-key="acd0e0d1910e" data-code="EVT-5582" data-n="3" data-latest="2026-10-11T14:44:20+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="new mac mini and mac studio receive up to $200 price cuts at amazon amazon obniża ceny mac mini, mac studio i macbooka pro new mac mini and mac studio receive up to $200 price cuts at amazon amazon slashes $430 off 14-inch macbook pro m5 pro, now $2,069 apple weekend deals: airpods, up to $200 off new macs, apple watch, more from $41" style="--i:2">
+    <a class="thumb" href="/techagregator/podsumowanie/acd0e0d1910e/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/a75f292624a7-876b86.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/a75f292624a7-876b86.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/a75f292624a7-876b86.webp" alt="" width="800" height="600" fetchpriority="high" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-5582</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/acd0e0d1910e/">Amazon obniża ceny Mac mini, Mac Studio i MacBooka Pro</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="acd0e0d1910e"><span class="roll">3</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-acd0e0d1910e" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-10T12:03:06+00:00" data-t0="2026-10-10T12:03:06+00:00" title="pierwsza publikacja 10.10.2026 14:03">10.10, 14:03</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/acd0e0d1910e/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-acd0e0d1910e" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/10/11/mac-mini-studio-200-off/" target="_blank" rel="noopener" hreflang="en">New Mac Mini and Mac Studio Receive Up to $200 Price Cuts at Amazon</a><span class="s-lead">Amazon has Apple&#39;s brand new Mac mini for up to $149 off this weekend, with both the M6 and M5 Pro Mac mini...</span><span class="s-auth">aut. Mitchel Broussard</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T14:44:20+00:00">16:44</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/appleinsider.png" alt="" width="14" height="14" loading="lazy">AppleInsider</span>
+        <span class="s-txt"><a href="https://appleinsider.com/articles/26/10/10/amazon-slashes-430-off-14-inch-macbook-pro-m5-pro-now-2069?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Amazon slashes $430 off 14-inch MacBook Pro M5 Pro, now $2,069</a><span class="s-lead">Early holiday deals are in effect at Amazon this weekend, with Apple&#39;s M5 Pro MacBook Pro dropping to $2,069...</span><span class="s-auth">aut. Christine McKee</span></span>
+        <span class="s-meta"><time datetime="2026-10-10T16:31:48+00:00">18:31</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/10/10/apple-weekend-deals-mac-mini/" target="_blank" rel="noopener" hreflang="en">Apple weekend deals: AirPods, up to $200 off new Macs, Apple Watch, more from $41</a><span class="s-lead">Hot off fall Prime Day 2026, we are still up to $150 off the new M6 Mac mini and a $200 price drop on the new...</span><span class="s-auth">aut. Justin Kahn</span></span>
+        <span class="s-meta"><time datetime="2026-10-10T12:03:06+00:00">14:03</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-d05facb80f7a" data-key="d05facb80f7a" data-code="EVT-4266" data-n="3" data-latest="2026-10-10T22:51:59+00:00" data-cat="ai" data-ai-generated-title="false" data-search="satya nadella says we should assume all ai models are ‘compromised’  microsoft ceo nadella says ai models should be assumed compromised from the start, wants humans able to pause them mid-task satya nadella says we should assume all ai models are ‘compromised’ microsoft’s satya nadella says ai models need an ‘emergency brake’" style="--i:3">
+    <a class="thumb" href="/techagregator/podsumowanie/d05facb80f7a/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/d05facb80f7a-98114c.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/d05facb80f7a-98114c.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/d05facb80f7a-98114c.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-4266</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/d05facb80f7a/">Satya Nadella says we should assume all AI models are ‘compromised’</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="d05facb80f7a"><span class="roll">3</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-d05facb80f7a" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-10T21:47:51+00:00" data-t0="2026-10-10T21:47:51+00:00" title="pierwsza publikacja 10.10.2026 23:47">10.10, 23:47</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-d05facb80f7a" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/wccftech.png" alt="" width="14" height="14" loading="lazy">Wccftech</span>
+        <span class="s-txt"><a href="https://wccftech.com/microsoft-ceo-nadella-says-ai-models-should-be-assumed-compromised-from-the-start-wants-humans-able-to-pause-them-mid-task/" target="_blank" rel="noopener" hreflang="en">Microsoft CEO Nadella Says AI Models Should Be Assumed Compromised From The Start, Wants Humans Able To Pause Them Mid-Task</a><span class="s-auth">aut. Ramish Zafar</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-10-10T22:51:59+00:00">00:51</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/verge.png" alt="" width="14" height="14" loading="lazy">The Verge</span>
+        <span class="s-txt"><a href="https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised" target="_blank" rel="noopener" hreflang="en">Satya Nadella says we should assume all AI models are ‘compromised’</a><span class="s-auth">aut. Terrence O’Brien</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-10-10T22:10:17+00:00">00:10</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techcrunch.png" alt="" width="14" height="14" loading="lazy">TechCrunch</span>
+        <span class="s-txt"><a href="https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/" target="_blank" rel="noopener" hreflang="en">Microsoft’s Satya Nadella says AI models need an ‘emergency brake’</a><span class="s-auth">aut. Anthony Ha</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-10-10T21:47:51+00:00">23:47</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-eff6a1da1200" data-key="eff6a1da1200" data-code="EVT-6512" data-n="2" data-latest="2026-10-12T11:18:00+00:00" data-cat="gry" data-ai-generated-title="true" data-search="431 graczy jednocześnie na steamie i pożyczka w banku. gra z ai pochłania nawet 1000 dolarów dziennie gra z ai generuje wysokie koszty dzienne, twórcy musieli wziąć kredyt 431 graczy jednocześnie na steamie i pożyczka w banku. gra z ai pochłania nawet 1000 dolarów dziennie darmowe demo na steamie kosztuje ponad 1000 dolarów dziennie. twórcy gry musieli pójść do banku po kredyt" style="--i:4">
+    <a class="thumb" href="/techagregator/podsumowanie/eff6a1da1200/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/eff6a1da1200-ee27ec.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/eff6a1da1200-ee27ec.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/eff6a1da1200-ee27ec.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6512</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/eff6a1da1200/">Gra z AI generuje wysokie koszty dzienne, twórcy musieli wziąć kredyt</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="eff6a1da1200"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-eff6a1da1200" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T18:30:01+00:00" data-t0="2026-10-11T18:30:01+00:00" title="pierwsza publikacja 11.10.2026 20:30">15 godz. 31 min temu</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/eff6a1da1200/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-eff6a1da1200" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/gryonline.png" alt="" width="14" height="14" loading="lazy">Gry-Online</span>
+        <span class="s-txt"><a href="https://www.gry-online.pl/newsroom/431-graczy-jednoczesnie-i-pozyczka-w-banku-gra-z-ai-pochlania-naw/z331eee" target="_blank" rel="noopener" hreflang="pl">431 graczy jednocześnie na Steamie i pożyczka w banku. Gra z AI pochłania nawet 1000 dolarów dziennie</a></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-10-12T11:18:00+00:00">13:18</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/purepc.png" alt="" width="14" height="14" loading="lazy">PurePC</span>
+        <span class="s-txt"><a href="https://www.purepc.pl/teach-my-little-sister-how-to-drive-demo-steam-koszty-ai-1000-dolarow-dziennie-easy-fox-kredyt" target="_blank" rel="noopener" hreflang="pl">Darmowe demo na Steamie kosztuje ponad 1000 dolarów dziennie. Twórcy gry musieli pójść do banku po kredyt</a><span class="s-lead">Gry, w których postacie odpowiadają za pomocą generatywnej AI, wyszły już poza pokazy technologiczne.</span><span class="s-auth">aut. Maciej Lewczuk</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T18:30:01+00:00">20:30</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-c4cc2373619e" data-key="c4cc2373619e" data-code="EVT-6670" data-n="2" data-latest="2026-10-12T09:50:02+00:00" data-cat="smartfony" data-ai-generated-title="true" data-search="ułyszałem, że iphone duo to pierwszy składak. że co? krytyka pierwszego składanego iphone&#39;a: &#39;iphone duo to strata pieniędzy&#39; „iphone duo to strata pieniędzy”. były fan apple punktuje pierwszy składany smartfon amerykańskiej firmy ułyszałem, że iphone duo to pierwszy składak. że co?" style="--i:5">
+    <a class="thumb" href="/techagregator/podsumowanie/c4cc2373619e/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/c4cc2373619e-6ab5f1.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/c4cc2373619e-6ab5f1.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/c4cc2373619e-6ab5f1.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6670</span><span class="cat">SMARTFONY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/c4cc2373619e/">Krytyka pierwszego składanego iPhone&#39;a: &#39;iPhone Duo to strata pieniędzy&#39;</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="c4cc2373619e"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-c4cc2373619e" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-12T05:10:00+00:00" data-t0="2026-10-12T05:10:00+00:00" title="pierwsza publikacja 12.10.2026 07:10">4 godz. 51 min temu</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/c4cc2373619e/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-c4cc2373619e" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tabletowo.png" alt="" width="14" height="14" loading="lazy">Tabletowo</span>
+        <span class="s-txt"><a href="https://www.tabletowo.pl/iphone-duo-to-strata-pieniedzy-dlaczego-opinia/" target="_blank" rel="noopener" hreflang="pl">„iPhone Duo to strata pieniędzy”. Były fan Apple punktuje pierwszy składany smartfon amerykańskiej firmy</a><span class="s-lead">Jedna z ważniejszych osób w branży (i prywatnie były fan Apple) twierdzi, że &#34;iPhone Duo to strata pieniędzy&#34;.</span><span class="s-auth">aut. Grzegorz Dąbek</span></span>
+        <span class="s-meta"><time datetime="2026-10-12T09:50:02+00:00">11:50</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/spidersweb.png" alt="" width="14" height="14" loading="lazy">Spider&#39;s Web</span>
+        <span class="s-txt"><a href="https://spidersweb.pl/2026/10/iphone-duo-pierwszy-skladany-telefon.html" target="_blank" rel="noopener" hreflang="pl">Ułyszałem, że iPhone Duo to pierwszy składak. Że co?</a><span class="s-auth">aut. Oliwier Nytko</span></span>
+        <span class="s-meta"><time datetime="2026-10-12T05:10:00+00:00">07:10</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-276eea6187e7" data-key="276eea6187e7" data-code="EVT-6151" data-n="2" data-latest="2026-10-12T08:30:00+00:00" data-cat="smartfony" data-ai-generated-title="false" data-search="hyperos 4 staje się faktem. xiaomi potwierdza aktualizację xiaomi hyperos 4: nowy system operacyjny trafi na pierwsze telefony hyperos 4 staje się faktem. xiaomi potwierdza aktualizację xiaomi hyperos 4 nadchodzi. te telefony dostaną aktualizację jako pierwsze" style="--i:6">
+    <a class="thumb" href="/techagregator/podsumowanie/276eea6187e7/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/c7d5fb0fc4e7-5d40b8.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/c7d5fb0fc4e7-5d40b8.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/c7d5fb0fc4e7-5d40b8.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6151</span><span class="cat">SMARTFONY</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/276eea6187e7/">HyperOS 4 staje się faktem. Xiaomi potwierdza aktualizację</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="276eea6187e7"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-276eea6187e7" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T13:58:02+00:00" data-t0="2026-10-11T13:58:02+00:00" title="pierwsza publikacja 11.10.2026 15:58">20 godz. 3 min temu</time>
+      
+      <span class="btn frame off" data-btn><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI W PRZYGOTOWANIU</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-276eea6187e7" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1094497-xiaomi-hyperos-4-staje-sie-faktem/" target="_blank" rel="noopener" hreflang="pl">HyperOS 4 staje się faktem. Xiaomi potwierdza aktualizację</a><span class="s-auth">aut. Marcin Ziółkowski</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-10-12T08:30:00+00:00">10:30</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/instalki.png" alt="" width="14" height="14" loading="lazy">Instalki.pl</span>
+        <span class="s-txt"><a href="https://www.instalki.pl/news/software/xiaomi-hyperos-4-nadchodzi-padl-termin-aktualizacji/" target="_blank" rel="noopener" hreflang="pl">Xiaomi HyperOS 4 nadchodzi. Te telefony dostaną aktualizację jako pierwsze</a><span class="s-lead">Xiaomi HyperOS 4 zacznie trafiać na pierwsze urządzenia już 15 października.</span><span class="s-auth">aut. Robert Lewandowski</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T13:58:02+00:00">15:58</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame alert" id="evt-5f9f83245c74" data-key="5f9f83245c74" data-code="EVT-7044" data-n="2" data-latest="2026-10-12T07:39:50+00:00" data-cat="bezpieczenstwo" data-ai-generated-title="true" data-search="windows pcs missing key updates could lose security fixes in 2027 microsoft: nieaktualne komputery z systemem windows przestaną otrzymywać aktualizacje w 2027 roku windows pcs missing key updates could lose security fixes in 2027 windows update: outdated pcs will stop getting updates in june 2027" style="--i:7">
+    <a class="thumb" href="/techagregator/podsumowanie/5f9f83245c74/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/5f9f83245c74-e0cb5b.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/5f9f83245c74-e0cb5b.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/5f9f83245c74-e0cb5b.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code"><svg class="ico" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg> EVT-7044</span><span class="cat">BEZPIECZEŃSTWO</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/5f9f83245c74/">Microsoft: Nieaktualne komputery z systemem Windows przestaną otrzymywać aktualizacje w 2027 roku</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="5f9f83245c74"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-5f9f83245c74" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T08:10:00+00:00" data-t0="2026-10-11T08:10:00+00:00" title="pierwsza publikacja 11.10.2026 10:10">wczoraj, 10:10</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/5f9f83245c74/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-5f9f83245c74" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/helpnet.png" alt="" width="14" height="14" loading="lazy">Help Net Security</span>
+        <span class="s-txt"><a href="https://www.helpnetsecurity.com/2026/10/12/microsoft-windows-update-certificate-rotation/" target="_blank" rel="noopener" hreflang="en">Windows PCs missing key updates could lose security fixes in 2027</a><span class="s-lead">Microsoft is advising users and businesses to update Windows devices before digital certificates used to...</span><span class="s-auth">aut. Anamarija Pogorelec</span></span>
+        <span class="s-meta"><time datetime="2026-10-12T07:39:50+00:00">09:39</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/notebookcheck.png" alt="" width="14" height="14" loading="lazy">Notebookcheck</span>
+        <span class="s-txt"><a href="https://www.notebookcheck.net/Windows-Update-Outdated-PCs-will-stop-getting-updates-in-June-2027.1421432.0.html" target="_blank" rel="noopener" hreflang="en">Windows Update: Outdated PCs will stop getting updates in June 2027</a><span class="s-lead">Microsoft is rotating the Windows Update certificates in 2027.</span><span class="s-auth">aut. Steffen Zahn</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T08:10:00+00:00">10:10</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-98e25f58f60e" data-key="98e25f58f60e" data-code="EVT-6526" data-n="2" data-latest="2026-10-12T07:23:11+00:00" data-cat="inne" data-ai-generated-title="true" data-search="let’s encrypt to cut ssl certificate lifetimes to 64 days in february 2027 let&#39;s encrypt skraca ważność certyfikatów tls do 64 dni od lutego 2027 let’s encrypt tls certificate lifetimes to drop from 90 to 64 days starting february 2027 let’s encrypt to cut ssl certificate lifetimes to 64 days in february 2027" style="--i:8">
+    <a class="thumb" href="/techagregator/podsumowanie/98e25f58f60e/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/98e25f58f60e-fb659f.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/98e25f58f60e-fb659f.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/98e25f58f60e-fb659f.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6526</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/98e25f58f60e/">Let&#39;s Encrypt skraca ważność certyfikatów TLS do 64 dni od lutego 2027</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="98e25f58f60e"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-98e25f58f60e" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-10T18:27:50+00:00" data-t0="2026-10-10T18:27:50+00:00" title="pierwsza publikacja 10.10.2026 20:27">10.10, 20:27</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/98e25f58f60e/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-98e25f58f60e" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/helpnet.png" alt="" width="14" height="14" loading="lazy">Help Net Security</span>
+        <span class="s-txt"><a href="https://www.helpnetsecurity.com/2026/10/12/lets-encrypt-64-day-certificate-lifetime/" target="_blank" rel="noopener" hreflang="en">Let’s Encrypt TLS certificate lifetimes to drop from 90 to 64 days starting February 2027</a><span class="s-lead">Websites that rely on Let’s Encrypt will soon have to renew their TLS certificates more often.</span><span class="s-auth">aut. Sinisa Markovic</span></span>
+        <span class="s-meta"><time datetime="2026-10-12T07:23:11+00:00">09:23</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/linuxiac.png" alt="" width="14" height="14" loading="lazy">Linuxiac</span>
+        <span class="s-txt"><a href="https://linuxiac.com/lets-encrypt-to-cut-ssl-certificate-lifetimes-to-64-days-in-february-2027/" target="_blank" rel="noopener" hreflang="en">Let’s Encrypt to Cut SSL Certificate Lifetimes to 64 Days in February 2027</a><span class="s-lead">Let&#39;s Encrypt will reduce TLS certificate validity from 90 to 64 days starting February 10, 2027, with a...</span><span class="s-auth">aut. Bobby Borisov</span></span>
+        <span class="s-meta"><time datetime="2026-10-10T18:27:50+00:00">20:27</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-1c1404f5282c" data-key="1c1404f5282c" data-code="EVT-9116" data-n="2" data-latest="2026-10-12T06:27:37+00:00" data-cat="inne" data-ai-generated-title="true" data-search="ukraińskie drony uderzyły w centra danych yandexu w rosji. zakłócenia w ponad 80 usługach ukraińskie drony uderzyły w centra danych yandexu w rosji ukraińskie drony uderzyły w centra danych yandexu w rosji. zakłócenia w ponad 80 usługach dramatyczny spadek ruchu rosyjskich botów po uderzeniu ukrainy" style="--i:9">
+    <a class="thumb" href="/techagregator/podsumowanie/1c1404f5282c/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/1c1404f5282c-1617e6.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/1c1404f5282c-1617e6.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/1c1404f5282c-1617e6.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-9116</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/1c1404f5282c/">Ukraińskie drony uderzyły w centra danych Yandexu w Rosji</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="1c1404f5282c"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-1c1404f5282c" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-12T06:02:27+00:00" data-t0="2026-10-12T06:02:27+00:00" title="pierwsza publikacja 12.10.2026 08:02">3 godz. 59 min temu</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/1c1404f5282c/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-1c1404f5282c" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/itwiz.png" alt="" width="14" height="14" loading="lazy">ITwiz</span>
+        <span class="s-txt"><a href="https://itwiz.pl/ukrainskie-drony-uderzyly-w-centra-danych-yandexu-w-rosji-zaklocenia-w-ponad-80-uslugach/" target="_blank" rel="noopener" hreflang="pl">Ukraińskie drony uderzyły w centra danych Yandexu w Rosji. Zakłócenia w ponad 80 usługach</a><span class="s-auth">aut. Mikołaj Marszycki</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-10-12T06:27:37+00:00">08:27</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/cyberdefence24.png" alt="" width="14" height="14" loading="lazy">CyberDefence24</span>
+        <span class="s-txt"><a href="https://cyberdefence24.pl/armia-i-sluzby/wojna-w-ukrainie/dramatyczny-spadek-ruchu-rosyjskich-botow-po-uderzeniu-ukrainy" target="_blank" rel="noopener" hreflang="pl">Dramatyczny spadek ruchu rosyjskich botów po uderzeniu Ukrainy</a><span class="s-lead">Atak ukraińskich dronów wstrzymał pracę centrów danych rosyjskiego giganta internetowego Yandex.</span></span>
+        <span class="s-meta"><time datetime="2026-10-12T06:02:27+00:00">08:02</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-631a6921cbe6" data-key="631a6921cbe6" data-code="EVT-2086" data-n="2" data-latest="2026-10-11T21:14:40+00:00" data-cat="inne" data-ai-generated-title="false" data-search="will the homeview be apple’s first smart home success?  will the homeview be apple’s first smart home success? apple&#39;s smart home hub will reportedly be called homeview" style="--i:10">
+    <a class="thumb" href="/techagregator/podsumowanie/631a6921cbe6/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/631a6921cbe6-f16717.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/631a6921cbe6-f16717.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/631a6921cbe6-f16717.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-2086</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/631a6921cbe6/">Will the HomeView be Apple’s first smart home success?</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="631a6921cbe6"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-631a6921cbe6" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T16:28:47+00:00" data-t0="2026-10-11T16:28:47+00:00" title="pierwsza publikacja 11.10.2026 18:28">17 godz. 32 min temu</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-631a6921cbe6" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techcrunch.png" alt="" width="14" height="14" loading="lazy">TechCrunch</span>
+        <span class="s-txt"><a href="https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/" target="_blank" rel="noopener" hreflang="en">Will the HomeView be Apple’s first smart home success?</a><span class="s-auth">aut. Anthony Ha</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-10-11T21:14:40+00:00">23:14</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/engadget.png" alt="" width="14" height="14" loading="lazy">Engadget</span>
+        <span class="s-txt"><a href="https://www.engadget.com/2283275/apples-smart-home-hub-will-reportedly-be-called-homeview/" target="_blank" rel="noopener" hreflang="en">Apple&#39;s smart home hub will reportedly be called HomeView</a><span class="s-auth">aut. staff@engadget.com</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-10-11T16:28:47+00:00">18:28</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-d795475ae61e" data-key="d795475ae61e" data-code="EVT-8430" data-n="2" data-latest="2026-10-11T18:08:21+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="updated entry-level ipad won&#39;t arrive until early 2027 nowy podstawowy ipad ma pojawić się dopiero na początku 2027 roku updated entry-level ipad won&#39;t arrive until early 2027 new entry-level ipad not expected until early 2027" style="--i:11">
+    <a class="thumb" href="/techagregator/podsumowanie/d795475ae61e/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/d795475ae61e-179e7e.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/d795475ae61e-179e7e.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/d795475ae61e-179e7e.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-8430</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/d795475ae61e/">Nowy podstawowy iPad ma pojawić się dopiero na początku 2027 roku</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="d795475ae61e"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-d795475ae61e" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T15:57:06+00:00" data-t0="2026-10-11T15:57:06+00:00" title="pierwsza publikacja 11.10.2026 17:57">18 godz. 4 min temu</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/d795475ae61e/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-d795475ae61e" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/appleinsider.png" alt="" width="14" height="14" loading="lazy">AppleInsider</span>
+        <span class="s-txt"><a href="https://appleinsider.com/articles/26/10/11/updated-entry-level-ipad-wont-arrive-until-early-2027?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Updated entry-level iPad won&#39;t arrive until early 2027</a><span class="s-lead">While there will probably be a launch of the OLED iPad mini in late October, users face a long wait until...</span><span class="s-auth">aut. Malcolm Owen</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T18:08:21+00:00">20:08</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/10/11/new-entry-level-ipad-not-expected-until-2027/" target="_blank" rel="noopener" hreflang="en">New Entry-Level iPad Not Expected Until Early 2027</a><span class="s-lead">Apple&#39;s next entry-level iPad models, codenamed J581 and J582, will not arrive until early 2027, according to...</span><span class="s-auth">aut. Hartley Charlton</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T15:57:06+00:00">17:57</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-c5504dc1d351" data-key="c5504dc1d351" data-code="EVT-3729" data-n="2" data-latest="2026-10-11T16:30:00+00:00" data-cat="gry" data-ai-generated-title="false" data-search="console market craters as xbox sales crash 33% to the lowest since launch 25 years ago, ps5 sales drop 25%  console market craters as xbox sales crash 33% to the lowest since launch 25 years ago, ps5 sales drop 25% playstation sales fall to a 13-year low in the us as prices soar" style="--i:12">
+    <a class="thumb" href="/techagregator/podsumowanie/c5504dc1d351/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/dc65757857bd-fdfe9b.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/dc65757857bd-fdfe9b.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/dc65757857bd-fdfe9b.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-3729</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/c5504dc1d351/">Console market craters as Xbox sales crash 33% to the lowest since launch 25 years ago, PS5 sales drop 25%</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="c5504dc1d351"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-c5504dc1d351" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T12:16:00+00:00" data-t0="2026-10-11T12:16:00+00:00" title="pierwsza publikacja 11.10.2026 14:16">21 godz. 45 min temu</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-c5504dc1d351" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tomshw.png" alt="" width="14" height="14" loading="lazy">Tom&#39;s Hardware</span>
+        <span class="s-txt"><a href="https://www.tomshardware.com/video-games/console-gaming/console-market-craters-as-xbox-sales-crash-33-percent-to-the-lowest-since-launch-25-years-ago-ps5-sales-drop-25-percent-steep-price-hikes-push-series-x-to-usd800-and-ps5-pro-to-usd900" target="_blank" rel="noopener" hreflang="en">Console market craters as Xbox sales crash 33% to the lowest since launch 25 years ago, PS5 sales drop 25%</a><span class="s-auth">aut. Jowi Morales</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-10-11T16:30:00+00:00">18:30</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/notebookcheck.png" alt="" width="14" height="14" loading="lazy">Notebookcheck</span>
+        <span class="s-txt"><a href="https://www.notebookcheck.net/PlayStation-sales-fall-to-a-13-year-low-in-the-US-as-prices-soar.1421435.0.html" target="_blank" rel="noopener" hreflang="en">PlayStation sales fall to a 13-year low in the US as prices soar</a><span class="s-lead">US PlayStation hardware sales fell 25 % through August, their weakest result for the period since 2013, while...</span><span class="s-auth">aut. Andrew Sozinov</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T12:16:00+00:00">14:16</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-ac55f1eb52d4" data-key="ac55f1eb52d4" data-code="EVT-8852" data-n="2" data-latest="2026-10-11T16:10:00+00:00" data-cat="gry" data-ai-generated-title="false" data-search="gta 6 leaker threatens to drop fully playable build if crypto goal is achieved  cyberleek threatens full gta 6 build leak unless take-two apologizes and his $30 million crypto memecoin goal is met gta 6 leaker threatens to drop fully playable build if crypto goal is achieved" style="--i:13">
+    <a class="thumb" href="/techagregator/podsumowanie/ac55f1eb52d4/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/ac55f1eb52d4-f75d02.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/ac55f1eb52d4-f75d02.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/ac55f1eb52d4-f75d02.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-8852</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/ac55f1eb52d4/">GTA 6 leaker threatens to drop fully playable build if crypto goal is achieved</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="ac55f1eb52d4"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-ac55f1eb52d4" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-10T20:40:01+00:00" data-t0="2026-10-10T20:40:01+00:00" title="pierwsza publikacja 10.10.2026 22:40">10.10, 22:40</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-ac55f1eb52d4" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tomshw.png" alt="" width="14" height="14" loading="lazy">Tom&#39;s Hardware</span>
+        <span class="s-txt"><a href="https://www.tomshardware.com/software/linux/cyberleek-threatens-full-gta-6-build-leak-unless-take-two-apologizes-and-his-usd30-million-crypto-memecoin-goal-is-met-leaker-demands-physical-release-while-pumping-solana-memecoin-to-usd30m" target="_blank" rel="noopener" hreflang="en">Cyberleek threatens full GTA 6 build leak unless Take-Two apologizes and his $30 million crypto memecoin goal is met</a><span class="s-auth">aut. Zak Killian</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-10-11T16:10:00+00:00">18:10</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/gta-6-leaker-threatens-to-drop-fully-playable-build-if-crypto-goal-is-achieved/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">GTA 6 leaker threatens to drop fully playable build if crypto goal is achieved</a><span class="s-auth">aut. Pulasthi Ariyasinghe</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-10-10T20:40:01+00:00">22:40</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-e8e52a91b9a4" data-key="e8e52a91b9a4" data-code="EVT-8132" data-n="2" data-latest="2026-10-11T15:52:38+00:00" data-cat="inne" data-ai-generated-title="true" data-search="adt rumored to handle installations in apple&#39;s smart home push apple może ogłosić partnerstwo z adt przy inteligentnym domu adt rumored to handle installations in apple&#39;s smart home push rumor: apple to announce new partnership with adt" style="--i:14">
+    <a class="thumb" href="/techagregator/podsumowanie/e8e52a91b9a4/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/e8e52a91b9a4-d40422.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/e8e52a91b9a4-d40422.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/e8e52a91b9a4-d40422.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-8132</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/e8e52a91b9a4/">Apple może ogłosić partnerstwo z ADT przy inteligentnym domu</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="e8e52a91b9a4"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-e8e52a91b9a4" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T02:17:37+00:00" data-t0="2026-10-11T02:17:37+00:00" title="pierwsza publikacja 11.10.2026 04:17">wczoraj, 04:17</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/e8e52a91b9a4/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-e8e52a91b9a4" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/appleinsider.png" alt="" width="14" height="14" loading="lazy">AppleInsider</span>
+        <span class="s-txt"><a href="https://appleinsider.com/articles/26/10/11/adt-rumored-to-handle-installations-in-apples-smart-home-push?utm_source=rss" target="_blank" rel="noopener" hreflang="en">ADT rumored to handle installations in Apple&#39;s smart home push</a><span class="s-lead">Apple&#39;s smart home plans could involve yet another partner, with security company ADT potentially joining the...</span><span class="s-auth">aut. Malcolm Owen</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T15:52:38+00:00">17:52</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/10/10/rumored-apple-adt-partnership/" target="_blank" rel="noopener" hreflang="en">Rumor: Apple to Announce New Partnership With ADT</a><span class="s-lead">Apple may be planning to announce a new partnership with home security company ADT, alongside the introduction...</span><span class="s-auth">aut. Joe Rossignol</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T02:17:37+00:00">04:17</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-e1016c9e5e87" data-key="e1016c9e5e87" data-code="EVT-5111" data-n="2" data-latest="2026-10-11T15:44:22+00:00" data-cat="smartfony" data-ai-generated-title="true" data-search="apple planning huge iphone duo demo experiences at select retail stores: report apple przygotowuje dużą prezentację iphone duo w sklepach apple plans major iphone duo retail showcase, but supply will be limited apple planning huge iphone duo demo experiences at select retail stores: report" style="--i:15">
+    <a class="thumb" href="/techagregator/podsumowanie/e1016c9e5e87/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/e1016c9e5e87-5e4c95.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/e1016c9e5e87-5e4c95.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/e1016c9e5e87-5e4c95.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-5111</span><span class="cat">SMARTFONY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/e1016c9e5e87/">Apple przygotowuje dużą prezentację iPhone Duo w sklepach</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="e1016c9e5e87"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-e1016c9e5e87" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T14:31:59+00:00" data-t0="2026-10-11T14:31:59+00:00" title="pierwsza publikacja 11.10.2026 16:31">19 godz. 29 min temu</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/e1016c9e5e87/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-e1016c9e5e87" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/10/11/iphone-duo-retail-showcase/" target="_blank" rel="noopener" hreflang="en">Apple Plans Major iPhone Duo Retail Showcase, But Supply Will Be Limited</a><span class="s-lead">Apple is preparing new displays and large numbers of demo units for the iPhone Duo &#39;s October 23 launch, but...</span><span class="s-auth">aut. Hartley Charlton</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T15:44:22+00:00">17:44</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/10/11/apple-planning-huge-iphone-duo-demo-experiences-at-select-retail-stores-report/" target="_blank" rel="noopener" hreflang="en">Apple planning huge iPhone Duo demo experiences at select retail stores: report</a><span class="s-lead">iPhone Duo is just about two weeks away from releasing, and according to Bloomberg’s Mark Gurman, Apple has...</span><span class="s-auth">aut. Michael Burkhardt</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T14:31:59+00:00">16:31</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-7977fcd3d0ef" data-key="7977fcd3d0ef" data-code="EVT-9135" data-n="2" data-latest="2026-10-11T15:08:24+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="unsurprisingly, the oled ipad mini is going to be expensive nowy ipad mini z ekranem oled ma być znacznie droższy unsurprisingly, the oled ipad mini is going to be expensive bloomberg: new ipad mini with oled display will be significantly more expensive than current model" style="--i:16">
+    <a class="thumb" href="/techagregator/podsumowanie/7977fcd3d0ef/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/7977fcd3d0ef-80d83e.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/7977fcd3d0ef-80d83e.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/7977fcd3d0ef-80d83e.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-9135</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/7977fcd3d0ef/">Nowy iPad mini z ekranem OLED ma być znacznie droższy</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="7977fcd3d0ef"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-7977fcd3d0ef" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-11T14:28:57+00:00" data-t0="2026-10-11T14:28:57+00:00" title="pierwsza publikacja 11.10.2026 16:28">19 godz. 32 min temu</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/7977fcd3d0ef/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-7977fcd3d0ef" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/appleinsider.png" alt="" width="14" height="14" loading="lazy">AppleInsider</span>
+        <span class="s-txt"><a href="https://appleinsider.com/articles/26/10/11/unsurprisingly-the-oled-ipad-mini-is-going-to-be-expensive?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Unsurprisingly, the OLED iPad mini is going to be expensive</a><span class="s-lead">A new report on Sunday says that the new iPad mini will likely cost about $799, versus the current $599.</span><span class="s-auth">aut. Mike Wuerthele</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T15:08:24+00:00">17:08</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/10/11/ipad-mini-oled-higher-price/" target="_blank" rel="noopener" hreflang="en">Bloomberg: New iPad mini with OLED display will be significantly more expensive than current model</a><span class="s-lead">The current iPad mini sells for $599 in its starting 128 GB configuration.</span><span class="s-auth">aut. Benjamin Mayo</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T14:28:57+00:00">16:28</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-df771d277c46" data-key="df771d277c46" data-code="EVT-9254" data-n="2" data-latest="2026-10-11T11:03:50+00:00" data-cat="inne" data-ai-generated-title="false" data-search="cloudflare acquires deno javascript runtime, core development to end in 2027  cloudflare acquires deno javascript runtime, core development to end in 2027 cloudflare acquires deno to improve its workers programming model" style="--i:17">
+    <a class="thumb" href="/techagregator/podsumowanie/df771d277c46/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/df771d277c46-1b8a9d.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/df771d277c46-1b8a9d.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/df771d277c46-1b8a9d.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-9254</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/df771d277c46/">Cloudflare Acquires Deno JavaScript Runtime, Core Development to End in 2027</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="df771d277c46"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-df771d277c46" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-10T16:25:42+00:00" data-t0="2026-10-10T16:25:42+00:00" title="pierwsza publikacja 10.10.2026 18:25">10.10, 18:25</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-df771d277c46" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/linuxiac.png" alt="" width="14" height="14" loading="lazy">Linuxiac</span>
+        <span class="s-txt"><a href="https://linuxiac.com/cloudflare-acquires-deno-javascript-runtime-core-development-to-end-in-2027/" target="_blank" rel="noopener" hreflang="en">Cloudflare Acquires Deno JavaScript Runtime, Core Development to End in 2027</a><span class="s-lead">Cloudflare acquires Deno, shifting its developers to Workers while the open-source JavaScript runtime faces an...</span><span class="s-auth">aut. Bobby Borisov</span></span>
+        <span class="s-meta"><time datetime="2026-10-11T11:03:50+00:00">13:03</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techcrunch.png" alt="" width="14" height="14" loading="lazy">TechCrunch</span>
+        <span class="s-txt"><a href="https://techcrunch.com/2026/10/10/cloudflare-acquires-deno-to-improve-its-workers-programming-model/" target="_blank" rel="noopener" hreflang="en">Cloudflare acquires Deno to improve its Workers programming model</a><span class="s-auth">aut. Anthony Ha</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-10-10T16:25:42+00:00">18:25</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-d0a9f107f5f9" data-key="d0a9f107f5f9" data-code="EVT-1209" data-n="2" data-latest="2026-10-10T10:33:27+00:00" data-cat="inne" data-ai-generated-title="true" data-search="google potwierdza premierę fitbit edge: oto prawdopodobna specyfikacja i ceny google potwierdza premierę fitbit edge - nowe urządzenie z linii wearables google potwierdza premierę fitbit edge: oto prawdopodobna specyfikacja i ceny google pokazuje fitbit edge. premiera już w poniedziałek, a cena ma być zaskakująco niska" style="--i:18">
+    <a class="thumb" href="/techagregator/podsumowanie/d0a9f107f5f9/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/d0a9f107f5f9-31839f.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/d0a9f107f5f9-31839f.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/d0a9f107f5f9-31839f.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-1209</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/d0a9f107f5f9/">Google potwierdza premierę Fitbit Edge - nowe urządzenie z linii Wearables</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="d0a9f107f5f9"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-d0a9f107f5f9" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-10-10T10:33:00+00:00" data-t0="2026-10-10T10:33:00+00:00" title="pierwsza publikacja 10.10.2026 12:33">10.10, 12:33</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/d0a9f107f5f9/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-d0a9f107f5f9" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/instalki.png" alt="" width="14" height="14" loading="lazy">Instalki.pl</span>
+        <span class="s-txt"><a href="https://www.instalki.pl/news/wearables/google-potwierdza-premiere-fitbit-edge-oto-prawdopodobna-specyfikacja-i-ceny/" target="_blank" rel="noopener" hreflang="pl">Google potwierdza premierę Fitbit Edge: oto prawdopodobna specyfikacja i ceny</a><span class="s-lead">Google oficjalnie potwierdziło datę premiery nowego urządzenia ze swojej linii Wearables.</span><span class="s-auth">aut. Piotr Sojski</span></span>
+        <span class="s-meta"><time datetime="2026-10-10T10:33:27+00:00">12:33</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1094213-google-pokazuje-fitbit-edge/" target="_blank" rel="noopener" hreflang="pl">Google pokazuje Fitbit Edge. Premiera już w poniedziałek, a cena ma być zaskakująco niska</a><span class="s-auth">aut. Borys Francuz</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-10-10T10:33:00+00:00">12:33</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+</ol>
+
+</main>
+</div>
+<footer class="foot">
+  <p>Agregator nagłówków: pokazujemy tytuły, linki i dla części serwisów skrót leadu (do ok. 110 znaków). Niektóre serwisy pokazujemy wyłącznie jako nagłówek z linkiem. Pełne artykuły czytasz u wydawców; prawa do treści należą do wydawców.</p>
+  <p>Podsumowania i tytuły wydarzeń oznaczone jako AI są generowane automatycznie i mogą zawierać błędy. Nazwy i ikony serwisów służą wyłącznie identyfikacji źródła; nie jesteśmy powiązani z wydawcami. Nie używamy zdjęć wydawców - grafiki są poglądowe. <a href="/techagregator/jak-powstaja-podsumowania/">Jak powstają podsumowania</a>.</p>
+</footer>
+
+<button class="sonda parked" id="sonda" type="button" aria-controls="sonda-log" aria-expanded="false" aria-label="Sonda - dziennik zdarzeń na żywo" title="Sonda - dziennik zdarzeń na żywo" hidden>
+  <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><circle class="sd-ring" cx="10" cy="10" r="6.5"/><path class="sd-cross" d="M10 .5v5M10 14.5v5M.5 10h5M14.5 10h5"/><circle class="sd-core" cx="10" cy="10" r="2.2"/></svg>
+</button>
+<div class="sonda-label" id="sonda-label" aria-hidden="true" hidden></div>
+<section class="sonda-log frame" id="sonda-log" role="dialog" aria-modal="false" aria-labelledby="sonda-log-h" hidden>
+  <header><h2 class="lbl sec" id="sonda-log-h">DZIENNIK SONDY</h2><button type="button" class="sonda-x" data-sonda-close aria-label="Zamknij"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+  <ol class="sonda-list"></ol>
+  <p class="sonda-empty mute" hidden>Brak zdarzeń.</p>
+</section>
+<div class="sr-only" id="sonda-live" aria-live="polite" aria-atomic="true"></div>
+<script id="sonda-cfg" type="application/json">{"base": "/techagregator", "eventsUrl": "/techagregator/events.json", "i18n": {"analysis": "ANALIZA {n} {w}...", "burst": "{n} {w} \u00b7 DZIENNIK", "ev2": "ZDARZENIA", "ev5": "ZDARZE\u0143", "log_done_error": "b\u0142\u0105d generowania", "log_done_ok": "podsumowanie gotowe", "log_done_rejected": "podsumowanie odrzucone przez weryfikacj\u0119", "log_new": "nowe wydarzenie \u00b7 {n}", "log_src": "{d} {w}", "log_start": "analiza {n} {w}...", "new": "NOWE", "ready": "GOTOWE", "src_gen": "\u0179R\u00d3DE\u0141", "src_gen1": "\u0179R\u00d3D\u0141A", "src_pl": 1, "test": "TEST", "w1": "\u017ar\u00f3d\u0142o", "w2": "\u017ar\u00f3d\u0142a", "w5": "\u017ar\u00f3de\u0142", "wg": "\u017ar\u00f3de\u0142", "wg1": "\u017ar\u00f3d\u0142a"}, "lang": "pl", "last": 1360, "post": false, "static": true}</script>
+<script src="/techagregator/static/app.js?v=v9-0" defer></script>
+<script src="/techagregator/static/bot.js?v=v8-1" defer></script>
+<script src="/techagregator/static/sonda.js?v=v9-0" defer></script>
+</body>
+</html>

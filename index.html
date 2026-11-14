@@ -1,0 +1,2072 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#07090C">
+<title>TechAgregator</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preload" href="/techagregator/static/fonts/IBMPlexMono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/techagregator/static/fonts/IBMPlexSans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/techagregator/static/fonts/fonts.css">
+<link rel="stylesheet" href="/techagregator/static/style.css?v=v12-0">
+
+</head>
+<body class="" data-static="1" data-base="/techagregator">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="duo-amber" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values=".2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues=".027 .04 .07 .11 .16 .22 .29 .36 .44 .6 1"/><feFuncG type="table" tableValues=".035 .05 .08 .12 .17 .23 .3 .37 .45 .6 .69"/><feFuncB type="table" tableValues=".047 .06 .09 .13 .18 .24 .31 .38 .46 .45 0"/></feComponentTransfer></filter></svg>
+<a class="skip" href="#main">Przejdź do treści</a>
+<header class="topbar frame">
+  <button class="menu-btn" type="button" data-panel-open aria-controls="panel" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>KANAŁY</span></button>
+  <a class="logo" href="/techagregator/" aria-label="TechAgregator">TECH<span class="acc">A</span>GREGATOR</a>
+  <div class="top-right">
+    <span class="clock" aria-label="Czas lokalny"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><time data-clock>--:--:--</time></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="status ok" title="14.11 22:12">
+      <button type="button" class="bot" id="bot" data-mood="happy" data-ok="1"
+        data-label-ok="ONLINE" data-label-bad="OFFLINE"
+        aria-controls="sonda-log" aria-expanded="false"
+        aria-label="ONLINE"
+        title="ONLINE">
+        <svg class="bot-svg" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true" focusable="false">
+          <defs><filter id="bot-shadow" x="-20%" y="-10%" width="140%" height="140%"><feDropShadow dx="0" dy="1.2" stdDeviation="1.1" flood-color="#000" flood-opacity=".55"/></filter></defs>
+          <g class="bot-face" filter="url(#bot-shadow)">
+            <rect class="bot-shell" x="1.25" y="1.25" width="33.5" height="33.5" rx="8.5" ry="8.5"/>
+            <!-- oczy: orby + zrenice; powieki sleep/yawn; luk yawn -->
+            <g class="bot-eye bot-eye-l">
+              <circle class="bot-orb" cx="12" cy="15" r="3.35"/>
+              <circle class="bot-pupil" cx="12.7" cy="14.2" r="1.05"/>
+              <line class="bot-lid-flat" x1="8.6" y1="15" x2="15.4" y2="15"/>
+              <path class="bot-lid-arc" d="M8.8 14.2 A3.4 3.4 0 0 0 15.2 14.2"/>
+            </g>
+            <g class="bot-eye bot-eye-r">
+              <circle class="bot-orb" cx="24" cy="15" r="3.35"/>
+              <circle class="bot-pupil" cx="24.7" cy="14.2" r="1.05"/>
+              <line class="bot-lid-flat" x1="20.6" y1="15" x2="27.4" y2="15"/>
+              <path class="bot-lid-arc" d="M20.8 14.2 A3.4 3.4 0 0 0 27.2 14.2"/>
+            </g>
+            <!-- usta -->
+            <path class="bot-mouth bot-smile" d="M14 23.2 Q18 26.2 22 23.2"/>
+            <ellipse class="bot-mouth bot-yawn-m" cx="18" cy="24.2" rx="3.2" ry="4.1"/>
+            <path class="bot-mouth bot-sad-m" d="M14 25.2 Q18 22.4 22 25.2"/>
+            <!-- zzz -->
+            <g class="bot-zzz" aria-hidden="true">
+              <g class="z z1" transform="translate(20.2 8.2)"><path d="M0 0h3.2M3.2 0L0 3.2M0 3.2h3.2"/></g>
+              <g class="z z2" transform="translate(23.2 5.6) scale(1.15)"><path d="M0 0h3.2M3.2 0L0 3.2M0 3.2h3.2"/></g>
+              <g class="z z3" transform="translate(26.4 2.8) scale(1.3)"><path d="M0 0h3.2M3.2 0L0 3.2M0 3.2h3.2"/></g>
+            </g>
+            <!-- dizzy: krzyzyki w oczach + wirujaca gwiazdka -->
+            <g class="bot-xeye bot-xeye-l" aria-hidden="true">
+              <line x1="9.6" y1="12.6" x2="14.4" y2="17.4"/><line x1="14.4" y1="12.6" x2="9.6" y2="17.4"/>
+            </g>
+            <g class="bot-xeye bot-xeye-r" aria-hidden="true">
+              <line x1="21.6" y1="12.6" x2="26.4" y2="17.4"/><line x1="26.4" y1="12.6" x2="21.6" y2="17.4"/>
+            </g>
+            <g class="bot-spiral" transform="translate(29.5 7)" aria-hidden="true">
+              <path d="M0-2.2 L0.7-0.7 L2.3-0.7 L1 0.3 L1.5 1.8 L0 1 L-1.5 1.8 L-1 0.3 L-2.3-0.7 L-0.7-0.7 Z"/>
+            </g>
+            <!-- think dots -->
+            <g class="bot-think-dots"><circle cx="27.5" cy="8" r=".7"/><circle cx="29.5" cy="5.8" r=".9"/><circle cx="31.8" cy="3.6" r="1.1"/></g>
+          </g>
+        </svg>
+      </button>
+      <span class="status-meta"><b data-count="37">37</b> EVT<span class="win"> / 48H</span></span>
+    </span>
+    <nav class="lang" aria-label="Język"><a href="?lang=pl" class="on" hreflang="pl">PL</a><a href="?lang=en" class="" hreflang="en">EN</a></nav>
+  </div>
+</header>
+<div class="shell">
+
+<aside id="panel" class="panel" aria-label="KANAŁY">
+  <div class="panel-head"><span class="lbl">KANAŁY</span><button class="panel-close" type="button" data-panel-close aria-label="Zamknij"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <aside class="ad frame ticks-box ad-side" aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside>
+  <h2 class="lbl sec ch-h" data-type>KANAŁY</h2>
+  <nav class="channels">
+    <a href="/techagregator/" data-kat="" class="on" aria-current="page"><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7"/><rect x="13.5" y="3.5" width="7" height="7"/><rect x="3.5" y="13.5" width="7" height="7"/><rect x="13.5" y="13.5" width="7" height="7"/></svg><span>WSZYSTKIE</span><b data-ch-all>37</b></a>
+    
+    <a href="/techagregator/?kat=ai" data-kat="ai" class="" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="5" r="1.5"/><circle cx="19.5" cy="5" r="1.5"/><circle cx="4.5" cy="19" r="1.5"/><circle cx="19.5" cy="19" r="1.5"/><path d="M5.6 6.1l4.2 3.8M18.4 6.1l-4.2 3.8M5.6 17.9l4.2-3.8M18.4 17.9l-4.2-3.8"/></svg><span>AI</span><b>8</b></a>
+    
+    <a href="/techagregator/?kat=smartfony" data-kat="smartfony" class="" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="1"/><path d="M11 18.5h2"/></svg><span>SMARTFONY</span><b>2</b></a>
+    
+    <a href="/techagregator/?kat=gry" data-kat="gry" class="" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01M17.32 5H6.68a4 4 0 0 0-3.98 3.59C2.6 9.42 2 14.46 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.55-.6-6.58-.69-7.26A4 4 0 0 0 17.32 5z"/></svg><span>GRY</span><b>7</b></a>
+    
+    <a href="/techagregator/?kat=bezpieczenstwo" data-kat="bezpieczenstwo" class=" alert" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg><span>BEZPIECZEŃSTWO</span><b>5</b></a>
+    
+    <a href="/techagregator/?kat=sprzet" data-kat="sprzet" class="" ><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="15" height="15"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2.5M15 2v2.5M9 19.5V22M15 19.5V22M2 9h2.5M2 15h2.5M19.5 9H22M19.5 15H22"/></svg><span>SPRZĘT</span><b>7</b></a>
+    
+  </nav>
+  <nav class="lang panel-lang" aria-label="Język"><a href="?lang=pl" class="on" hreflang="pl">PL</a><a href="?lang=en" class="" hreflang="en">EN</a></nav>
+  <form class="filter" action="/techagregator/" method="get" role="search">
+    
+    <label class="lbl" for="q"><svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5l-4.5-4.5"/></svg> Filtruj wydarzenia</label>
+    <input id="q" name="q" type="search" value="" autocomplete="off" spellcheck="false">
+  </form>
+</aside>
+<div class="scrim" data-panel-close hidden></div>
+<main id="main" class="content">
+
+<div class="sec-head">
+  <h1 class="lbl sec" data-type>WYDARZENIA</h1>
+  <span class="lbl mute"><span data-list-count>37</span> EVT · 48H</span>
+</div>
+
+<ol class="rows" data-rows data-kat="" data-q="">
+
+  <li class="evt frame first alert" id="evt-1cde593b13f4" data-key="1cde593b13f4" data-code="EVT-1396" data-n="11" data-latest="2026-11-13T18:19:45+00:00" data-cat="bezpieczenstwo" data-ai-generated-title="true" data-search="usługi microsoftu dotknięte ogromną awarią. na całym świecie nie działa m.in. outlook, teams oraz microsoft 365 globalna awaria usług microsoft 365: problemy z outlookiem, teams i copilotem usługi microsoftu dotknięte ogromną awarią. na całym świecie nie działa m.in. outlook, teams oraz microsoft 365 microsoft nadal walczy z awarią. outlook nie odpuszcza ogromna awaria usług microsoftu na całym świecie. outlook, teams i copilot przestały działać, firma wyjaśnia sytuację problemy z teamsami, outlookiem, copilotem i innymi usługami microsoftu. co się dzieje? wielka awaria microsoftu. nie działają outlook, copilot i microsoft 365 nie działa outlook, teamsy i inne usługi. wielka awaria microsoftu trwa globalna awaria outlooka / microsoftu 365 awaria microsoft 365. problemy z outlookiem i teamsem trwają od kilkunastu godzin potężna awaria microsoft nadal trwa. nie działa m.in. outlook i teams potężna awaria usług microsoftu. są poważne problemy z platformami outlook, teams, copilot i innymi globalna awaria microsoft 365. outlook i teams nie działają w 74 krajach" style="--i:0">
+    <a class="thumb" href="/techagregator/podsumowanie/1cde593b13f4/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/bezpieczenstwo-0.webp" alt="" width="800" height="600" fetchpriority="high" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code"><svg class="ico" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg> EVT-1396</span><span class="cat">BEZPIECZEŃSTWO</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/1cde593b13f4/">Globalna awaria usług Microsoft 365: problemy z Outlookiem, Teams i Copilotem</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="1cde593b13f4"><span class="roll">11</span>&nbsp;<span class="srcw">ŹRÓDEŁ</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-1cde593b13f4" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T07:04:56+00:00" data-t0="2026-11-13T07:04:56+00:00" title="pierwsza publikacja 13.11.2026 08:04">wczoraj, 08:04</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/1cde593b13f4/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-1cde593b13f4" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/cdaction.png" alt="" width="14" height="14" loading="lazy">CD-Action</span>
+        <span class="s-txt"><a href="https://cdaction.pl/newsy/uslugi-microsoftu-dotkniete-ogromna-awaria-na-calym-swiecie-nie-dziala-m-in-outlook-teams-oraz-microsoft-365/" target="_blank" rel="noopener" hreflang="pl">Usługi Microsoftu dotknięte ogromną awarią. Na całym świecie nie działa m.in. Outlook, Teams oraz Microsoft 365</a><span class="s-lead">Problem podobno powoli jest naprawiany, ale ciągle nie mamy oficjalnej informacji dotyczącej tego, co go...</span><span class="s-auth">aut. Sam Goldman</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T18:19:45+00:00">19:19</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/telepolis.png" alt="" width="14" height="14" loading="lazy">Telepolis</span>
+        <span class="s-txt"><a href="https://www.telepolis.pl/tech/aplikacje/microsoft-outlook-uslugi-globalna-awaria-listopad-2026" target="_blank" rel="noopener" hreflang="pl">Microsoft nadal walczy z awarią. Outlook nie odpuszcza</a><span class="s-lead">Problemy z usługami Microsoftu wciąż trwają.</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T10:22:00+00:00">11:22</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/purepc.png" alt="" width="14" height="14" loading="lazy">PurePC</span>
+        <span class="s-txt"><a href="https://www.purepc.pl/microsoft-365-awaria-outlook-teams-copilot" target="_blank" rel="noopener" hreflang="pl">Ogromna awaria usług Microsoftu na całym świecie. Outlook, Teams i Copilot przestały działać, firma wyjaśnia sytuację</a><span class="s-lead">Usługi Microsoft 365 stanowią dziś podstawę codziennej pracy milionów osób, a ich skład wchodzi sporo znanych...</span><span class="s-auth">aut. Piotr Piwowarczyk</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T08:21:01+00:00">09:21</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/cyberdefence24.png" alt="" width="14" height="14" loading="lazy">CyberDefence24</span>
+        <span class="s-txt"><a href="https://cyberdefence24.pl/cyberbezpieczenstwo/problemy-z-teamsami-outlookiem-copilotem-i-innymi-uslugami-microsoftu-co-sie-dzieje" target="_blank" rel="noopener" hreflang="pl">Problemy z Teamsami, Outlookiem, Copilotem i innymi usługami Microsoftu. Co się dzieje?</a><span class="s-lead">Microsoft od wielu godzin walczy z globalną awarią swoich usług.</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T08:13:20+00:00">09:13</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/komputerswiat.png" alt="" width="14" height="14" loading="lazy">Komputer Świat</span>
+        <span class="s-txt"><a href="https://www.komputerswiat.pl/nauka-i-technika/siec-i-internet/wielka-awaria-microsoftu-nie-dzialaja-outlook-copilot-i-microsoft-365/txgw3tb" target="_blank" rel="noopener" hreflang="pl">Wielka awaria Microsoftu. Nie działają Outlook, Copilot i Microsoft 365</a></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T08:10:04+00:00">09:10</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/spidersweb.png" alt="" width="14" height="14" loading="lazy">Spider&#39;s Web</span>
+        <span class="s-txt"><a href="https://spidersweb.pl/2026/11/microsoft-awaria-outlook-teams-copilot.html" target="_blank" rel="noopener" hreflang="pl">Nie działa Outlook, Teamsy i inne usługi. Wielka awaria Microsoftu</a><span class="s-auth">aut. Malwina Kuśmierek</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T07:57:00+00:00">08:57</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/sekurak.png" alt="" width="14" height="14" loading="lazy">Sekurak</span>
+        <span class="s-txt"><a href="https://sekurak.pl/trwa-globalna-awaria-outlooka-microsoftu-365/" target="_blank" rel="noopener" hreflang="pl">Trwa globalna awaria Outlooka / Microsoftu 365</a><span class="s-lead">Wygląda to na niekontrolowaną zmianę konfiguracji serwerów (lub infrastruktury sieciowej).</span><span class="s-auth">aut. sekurak</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T07:51:30+00:00">08:51</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1104498-awaria-outlooka-i-teams-microsoft-365/" target="_blank" rel="noopener" hreflang="pl">Awaria Microsoft 365. Problemy z Outlookiem i Teamsem trwają od kilkunastu godzin</a><span class="s-auth">aut. Sonia Gulina</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T07:50:00+00:00">08:50</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/instalki.png" alt="" width="14" height="14" loading="lazy">Instalki.pl</span>
+        <span class="s-txt"><a href="https://www.instalki.pl/news/software/microsoft-awaria-nie-dziala-outlook-i-teams/" target="_blank" rel="noopener" hreflang="pl">Potężna awaria Microsoft nadal trwa. Nie działa m.in. Outlook i Teams</a><span class="s-lead">Trwa wielka awaria Microsoft, która objęła swoim zasięgiem kluczowe usługi korporacji.</span><span class="s-auth">aut. Piotr Malinowski</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T07:42:02+00:00">08:42</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tabletowo.png" alt="" width="14" height="14" loading="lazy">Tabletowo</span>
+        <span class="s-txt"><a href="https://www.tabletowo.pl/potezna-awaria-uslug-microsoftu-12-13-11-2026/" target="_blank" rel="noopener" hreflang="pl">Potężna awaria usług Microsoftu. Są poważne problemy z platformami Outlook, Teams, Copilot i innymi</a><span class="s-lead">Już wczorajszego wieczora użytkownicy zaczęli zgłaszać problemy z działaniem popularnych usług Microsoftu.</span><span class="s-auth">aut. Grzegorz Dąbek</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T07:36:37+00:00">08:36</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/itwiz.png" alt="" width="14" height="14" loading="lazy">ITwiz</span>
+        <span class="s-txt"><a href="https://itwiz.pl/globalna-awaria-microsoft-365-outlook-i-teams-nie-dzialaja-w-74-krajach/" target="_blank" rel="noopener" hreflang="pl">Globalna awaria Microsoft 365. Outlook i Teams nie działają w 74 krajach</a><span class="s-auth">aut. Mikołaj Marszycki</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T07:04:56+00:00">08:04</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-c231d25e54b9" data-key="c231d25e54b9" data-code="EVT-3481" data-n="8" data-latest="2026-11-14T11:43:40+00:00" data-cat="ai" data-ai-generated-title="true" data-search="chatgpt wallet oficjalnie wystartował. agent ai zrobi zakupy i zapłaci kartą openai uruchamia chatgpt wallet dla agentów ai chatgpt wallet oficjalnie wystartował. agent ai zrobi zakupy i zapłaci kartą openai uruchamia chatgpt wallet. ten sam mechanizm widzieliśmy już w polsce na pokazie visy chatgpt wallet lets openai’s dots agents make purchases for you openai rolls out chatgpt wallet to let dots ai agents make purchases openai launches chatgpt wallet, allowing ai agents to make purchases on your behalf chatgpt wallet lets agents pay without seeing your card number chatgpt’s new wallet lets ai agents shop and check out for you openai launches chatgpt wallet, enabling ‘dot’ agents to make purchases" style="--i:1">
+    <a class="thumb" href="/techagregator/podsumowanie/c231d25e54b9/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/ai-1.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/ai-1.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/ai-1.webp" alt="" width="800" height="600" fetchpriority="high" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-3481</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/c231d25e54b9/">OpenAI uruchamia ChatGPT Wallet dla agentów AI</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="c231d25e54b9"><span class="roll">8</span>&nbsp;<span class="srcw">ŹRÓDEŁ</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-c231d25e54b9" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T15:46:54+00:00" data-t0="2026-11-13T15:46:54+00:00" title="pierwsza publikacja 13.11.2026 16:46">wczoraj, 16:46</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/c231d25e54b9/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-c231d25e54b9" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/instalki.png" alt="" width="14" height="14" loading="lazy">Instalki.pl</span>
+        <span class="s-txt"><a href="https://www.instalki.pl/news/internet/chatgpt-wallet-oficjalnie-wystartowal-agent-ai-zrobi-zakupy-i-zaplaci-karta/" target="_blank" rel="noopener" hreflang="pl">ChatGPT Wallet oficjalnie wystartował. Agent AI zrobi zakupy i zapłaci kartą</a><span class="s-lead">ChatGPT nie tylko wyszuka produkt lub zarezerwuje nocleg, ale też sfinalizuje transakcję.</span><span class="s-auth">aut. Piotr Sojski</span></span>
+        <span class="s-meta"><time datetime="2026-11-14T11:43:40+00:00">12:43</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/imagazine.png" alt="" width="14" height="14" loading="lazy">iMagazine</span>
+        <span class="s-txt"><a href="https://imagazine.pl/2026/11/14/chatgpt-wallet-platnosci-agentowe-openai-visa/" target="_blank" rel="noopener" hreflang="pl">OpenAI uruchamia ChatGPT Wallet. Ten sam mechanizm widzieliśmy już w Polsce na pokazie Visy</a><span class="s-lead">OpenAI udostępniło w USA usługę ChatGPT Wallet, która pozwala agentom AI realizować zakupy w imieniu...</span><span class="s-auth">aut. Dariusz Hałas</span></span>
+        <span class="s-meta"><time datetime="2026-11-14T11:00:10+00:00">12:00</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/verge.png" alt="" width="14" height="14" loading="lazy">The Verge</span>
+        <span class="s-txt"><a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet" target="_blank" rel="noopener" hreflang="en">ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you</a><span class="s-auth">aut. Stevie Bonifield</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T20:45:10+00:00">21:45</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/chatgpt-wallet-3735154/" target="_blank" rel="noopener" hreflang="en">OpenAI rolls out ChatGPT Wallet to let Dots AI agents make purchases</a><span class="s-auth">aut. Chandra Steele</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T19:05:13+00:00">20:05</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/openai-launches-chatgpt-wallet-allowing-ai-agents-to-make-purchases-on-your-behalf/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">OpenAI launches ChatGPT Wallet, allowing AI agents to make purchases on your behalf</a><span class="s-auth">aut. Pradeep Viswanathan</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T16:22:01+00:00">17:22</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/helpnet.png" alt="" width="14" height="14" loading="lazy">Help Net Security</span>
+        <span class="s-txt"><a href="https://www.helpnetsecurity.com/2026/11/13/openai-chatgpt-wallet/" target="_blank" rel="noopener" hreflang="en">ChatGPT Wallet lets agents pay without seeing your card number</a><span class="s-lead">OpenAI began rolling out ChatGPT Wallet, which lets ChatGPT agents pay for purchases with a stand-in card...</span><span class="s-auth">aut. Anamarija Pogorelec</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T16:15:25+00:00">17:15</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techcrunch.png" alt="" width="14" height="14" loading="lazy">TechCrunch</span>
+        <span class="s-txt"><a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank" rel="noopener" hreflang="en">ChatGPT’s new Wallet lets AI agents shop and check out for you</a><span class="s-auth">aut. Sarah Perez</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T16:00:12+00:00">17:00</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/11/13/openai-launches-chatgpt-wallet-enabling-dot-agents-to-make-purchases/" target="_blank" rel="noopener" hreflang="en">OpenAI launches ChatGPT Wallet, enabling ‘dot’ agents to make purchases</a><span class="s-lead">OpenAI is launching ChatGPT Wallet, which it says is “setting a new bar for secure payments by agents.”...</span><span class="s-auth">aut. Zac Hall</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T15:46:54+00:00">16:46</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-c2c57ff8974b" data-key="c2c57ff8974b" data-code="EVT-3947" data-n="7" data-latest="2026-11-14T10:30:00+00:00" data-cat="ai" data-ai-generated-title="true" data-search="gemini 4 hydrogen już dostępny. google stawia na szybkość google udostępnia model gemini 4 hydrogen wszystkim użytkownikom google przyspiesza ai w wyszukiwarce. gemini 4 hydrogen dostępny globalnie google’s new gemini 4 hydrogen model is rolling out to all users gemini 4 hydrogen już dostępny. google stawia na szybkość tańszy model google pokonał droższego argona. gemini 4 hydrogen jest już dostępny, ale nie dla wszystkich tak samo gemini 4 hydrogen trafia do wszystkich. tańszy model google pokonuje w testach droższego brata gemini 4 hydrogen: what free users and google ai plus get gemini 4 hydrogen oficjalnie zaprezentowany. google zapowiada skok wydajności" style="--i:2">
+    <a class="thumb" href="/techagregator/podsumowanie/c2c57ff8974b/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/ai-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/ai-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/ai-0.webp" alt="" width="800" height="600" fetchpriority="high" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-3947</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/c2c57ff8974b/">Google udostępnia model Gemini 4 Hydrogen wszystkim użytkownikom</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="c2c57ff8974b"><span class="roll">7</span>&nbsp;<span class="srcw">ŹRÓDEŁ</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-c2c57ff8974b" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T04:45:16+00:00" data-t0="2026-11-13T04:45:16+00:00" title="pierwsza publikacja 13.11.2026 05:45">wczoraj, 05:45</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/c2c57ff8974b/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-c2c57ff8974b" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1104964-gemini-4-hydrogen-google-wyszukiwarka/" target="_blank" rel="noopener" hreflang="pl">Google przyspiesza AI w wyszukiwarce. Gemini 4 Hydrogen dostępny globalnie</a><span class="s-auth">aut. Jolanta Szczepaniak</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T10:30:00+00:00">11:30</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/thurrott.png" alt="" width="14" height="14" loading="lazy">Thurrott</span>
+        <span class="s-txt"><a href="https://www.thurrott.com/a-i/343828/googles-new-gemini-4-hydrogen-model-is-rolling-out-to-all-users" target="_blank" rel="noopener" hreflang="en">Google’s New Gemini 4 Hydrogen Model is Rolling Out to All Users</a><span class="s-lead">Google rolled out yesterday a new Gemini 4 model, Hydrogen, across its Gemini app and Google Search.</span><span class="s-auth">aut. Laurent Giret</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T15:44:29+00:00">16:44</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/telepolis.png" alt="" width="14" height="14" loading="lazy">Telepolis</span>
+        <span class="s-txt"><a href="https://www.telepolis.pl/tech/aplikacje/google-gemini-4-hydrogen-sztuczna-inteligencja-premiera" target="_blank" rel="noopener" hreflang="pl">Gemini 4 Hydrogen już dostępny. Google stawia na szybkość</a><span class="s-lead">Google zaprezentował nowy model sztucznej inteligencji Gemini 4 Hydrogen.</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T11:30:00+00:00">12:30</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/purepc.png" alt="" width="14" height="14" loading="lazy">PurePC</span>
+        <span class="s-txt"><a href="https://www.purepc.pl/google-gemini-4-hydrogen-nastepca-gemini-3-8-flash-wyszukiwarka-api-cena-testy" target="_blank" rel="noopener" hreflang="pl">Tańszy model Google pokonał droższego Argona. Gemini 4 Hydrogen jest już dostępny, ale nie dla wszystkich tak samo</a><span class="s-lead">Google od września rozwija modele czwartej generacji Gemini według jednego scenariusza.</span><span class="s-auth">aut. Maciej Lewczuk</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T10:20:01+00:00">11:20</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/imagazine.png" alt="" width="14" height="14" loading="lazy">iMagazine</span>
+        <span class="s-txt"><a href="https://imagazine.pl/2026/11/13/gemini-4-hydrogen-premiera-ceny-mozliwosci/" target="_blank" rel="noopener" hreflang="pl">Gemini 4 Hydrogen trafia do wszystkich. Tańszy model Google pokonuje w testach droższego brata</a><span class="s-lead">Google udostępnia wszystkim użytkownikom nowy model Gemini 4 Hydrogen, który zastępuje dotychczasową linię 3.8...</span><span class="s-auth">aut. Dariusz Hałas</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T09:10:00+00:00">10:10</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/notebookcheck.png" alt="" width="14" height="14" loading="lazy">Notebookcheck</span>
+        <span class="s-txt"><a href="https://www.notebookcheck.net/Gemini-4-Hydrogen-What-free-users-and-Google-AI-Plus-get.1449493.0.html" target="_blank" rel="noopener" hreflang="en">Gemini 4 Hydrogen: What free users and Google AI Plus get</a><span class="s-lead">Google is rolling out Gemini 4 Hydrogen, the successor to Gemini 3.8 Flash.</span><span class="s-auth">aut. Steffen Zahn</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T07:37:00+00:00">08:37</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/antyweb.png" alt="" width="14" height="14" loading="lazy">Antyweb</span>
+        <span class="s-txt"><a href="https://antyweb.pl/gemini-4-hydrogen-oficjalnie-zaprezentowany-google-zapowiada-skok-wydajnosci" target="_blank" rel="noopener" hreflang="pl">Gemini 4 Hydrogen oficjalnie zaprezentowany. Google zapowiada skok wydajności</a><span class="s-auth">aut. Patryk Koncewicz</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T04:45:16+00:00">05:45</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame alert" id="evt-ef6eeaa0edce" data-key="ef6eeaa0edce" data-code="EVT-6206" data-n="5" data-latest="2026-11-14T18:56:00+00:00" data-cat="bezpieczenstwo" data-ai-generated-title="true" data-search="autopay zhakowany. możliwy wyciek danych płatności autopay ofiarą cyberataku, możliwy wyciek danych finansowych autopay zhakowane. atak źle wróży na przyszłość atak na autopay i możliwy wyciek danych finansowych. firma ostrzega klientów autopay zaatakowany. możliwy wyciek danych płatności klientów autopay zhakowany. możliwy wyciek danych płatności autopay zhackowane. możliwy wyciek danych finansowych. [aktualizacja]" style="--i:3">
+    <a class="thumb" href="/techagregator/podsumowanie/ef6eeaa0edce/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-2.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/bezpieczenstwo-2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code"><svg class="ico" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg> EVT-6206</span><span class="cat">BEZPIECZEŃSTWO</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/ef6eeaa0edce/">Autopay ofiarą cyberataku, możliwy wyciek danych finansowych</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="ef6eeaa0edce"><span class="roll">5</span>&nbsp;<span class="srcw">ŹRÓDEŁ</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-ef6eeaa0edce" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T17:23:19+00:00" data-t0="2026-11-13T17:23:19+00:00" title="pierwsza publikacja 13.11.2026 18:23">wczoraj, 18:23</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/ef6eeaa0edce/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-ef6eeaa0edce" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tabletowo.png" alt="" width="14" height="14" loading="lazy">Tabletowo</span>
+        <span class="s-txt"><a href="https://www.tabletowo.pl/autopay-zhakowane-atak-zle-wrozy-na-przyszlosc/" target="_blank" rel="noopener" hreflang="pl">Autopay zhakowane. Atak źle wróży na przyszłość</a><span class="s-lead">Popularna platforma płatności internetowych Autopay została zaatakowana przez hakerów.</span><span class="s-auth">aut. Bartosz Kaja</span></span>
+        <span class="s-meta"><time datetime="2026-11-14T18:56:00+00:00">19:56</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1104975-cyberatak-autopay-wyciek-danych-ai/" target="_blank" rel="noopener" hreflang="pl">Atak na Autopay i możliwy wyciek danych finansowych. Firma ostrzega klientów</a><span class="s-auth">aut. Jolanta Szczepaniak</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T12:35:00+00:00">13:35</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/dobreprogramy.png" alt="" width="14" height="14" loading="lazy">Dobreprogramy</span>
+        <span class="s-txt"><a href="https://www.dobreprogramy.pl/autopay-zaatakowany-mozliwy-wyciek-danych-platnosci-klientow,7350910109997056a" target="_blank" rel="noopener" hreflang="pl">Autopay zaatakowany. Możliwy wyciek danych płatności klientów</a></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-14T11:40:46+00:00">12:40</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/telepolis.png" alt="" width="14" height="14" loading="lazy">Telepolis</span>
+        <span class="s-txt"><a href="https://www.telepolis.pl/fintech/bezpieczenstwo/autopay-zhakowany-mozliwy-wyciek-danych-platnosci" target="_blank" rel="noopener" hreflang="pl">Autopay zhakowany. Możliwy wyciek danych płatności</a><span class="s-lead">Biuro prasowe Autopay poinformowało w najnowszym komunikacie, że firma stała się celem ataku.</span></span>
+        <span class="s-meta"><time datetime="2026-11-14T07:59:00+00:00">08:59</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/sekurak.png" alt="" width="14" height="14" loading="lazy">Sekurak</span>
+        <span class="s-txt"><a href="https://sekurak.pl/autopay-zhackowane-mozliwy-wyciek-danych-finansowych/" target="_blank" rel="noopener" hreflang="pl">Autopay zhackowane. Możliwy wyciek danych finansowych. [Aktualizacja]</a><span class="s-lead">Autopay poinformowało dzisiaj o cyberataku.</span><span class="s-auth">aut. sekurak</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T17:23:19+00:00">18:23</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-ccf1c9625cdc" data-key="ccf1c9625cdc" data-code="EVT-1356" data-n="5" data-latest="2026-11-14T17:43:49+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="siri ai trafi na starsze apple tv 4k siri ai trafi na starsze modele apple tv 4k wraz z tvos 27.2.1 siri ai has arrived on 2021 and newer apple tv 4k models siri ai trafi na starsze apple tv 4k [updated] tvos 27.2.1 will soon bring siri ai to older apple tv models tvos 27.2.1 launching soon with siri ai for older apple tv 4k models siri ai coming to older apple tv 4k models in tvos 27.2.1" style="--i:4">
+    <a class="thumb" href="/techagregator/podsumowanie/ccf1c9625cdc/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/2facc5e1cf79-75be6a.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/2facc5e1cf79-75be6a.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/2facc5e1cf79-75be6a.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-1356</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/ccf1c9625cdc/">Siri AI trafi na starsze modele Apple TV 4K wraz z tvOS 27.2.1</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="ccf1c9625cdc"><span class="roll">5</span>&nbsp;<span class="srcw">ŹRÓDEŁ</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-ccf1c9625cdc" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-12T22:50:59+00:00" data-t0="2026-11-12T22:50:59+00:00" title="pierwsza publikacja 12.11.2026 23:50">12.11, 23:50</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/ccf1c9625cdc/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-ccf1c9625cdc" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/appleinsider.png" alt="" width="14" height="14" loading="lazy">AppleInsider</span>
+        <span class="s-txt"><a href="https://appleinsider.com/articles/26/11/13/siri-ai-is-coming-to-apple-tv-4k-including-models-from-2021?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Siri AI has arrived on 2021 and newer Apple TV 4K models</a><span class="s-lead">Apple has released tvOS 26.2.1, and has updated an article on its support site listing the requirements for...</span><span class="s-auth">aut. Amber Neely</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T19:42:49+00:00">20:42</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/imagazine.png" alt="" width="14" height="14" loading="lazy">iMagazine</span>
+        <span class="s-txt"><a href="https://imagazine.pl/2026/11/13/siri-ai-trafi-na-starsze-apple-tv-4k/" target="_blank" rel="noopener" hreflang="pl">Siri AI trafi na starsze Apple TV 4K</a><span class="s-lead">Nadchodząca aktualizacja tvOS 27.2.1 wprowadzi Siri AI na Apple TV 4K drugiej i trzeciej generacji - wynika z...</span><span class="s-auth">aut. Redakcja iMagazine</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T18:00:55+00:00">19:00</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/thurrott.png" alt="" width="14" height="14" loading="lazy">Thurrott</span>
+        <span class="s-txt"><a href="https://www.thurrott.com/a-i/343838/tvos-27-2-1-will-soon-bring-siri-ai-to-older-apple-tv-models" target="_blank" rel="noopener" hreflang="en">[Updated] tvOS 27.2.1 Will Soon Bring Siri AI to Older Apple TV Models</a><span class="s-lead">The upcoming tvOS 27.2.1 update will enable Apple&#39;s new Siri AI assistant on the 2nd-gen and 3rd-gen Apple TV...</span><span class="s-auth">aut. Laurent Giret</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T17:06:30+00:00">18:06</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/11/13/tvos-27-2-1-launching-soon-with-siri-ai-for-older-apple-tv-4k-models/" target="_blank" rel="noopener" hreflang="en">tvOS 27.2.1 launching soon with Siri AI for older Apple TV 4K models</a><span class="s-lead">Today the new Apple TV 4K has arrived ( order here ) with Siri AI as a major tentpole feature.</span><span class="s-auth">aut. Ryan Christoffel</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T14:15:56+00:00">15:15</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/11/12/siri-ai-tvos-27-2-1/" target="_blank" rel="noopener" hreflang="en">Siri AI Coming to Older Apple TV 4K Models in tvOS 27.2.1</a><span class="s-lead">An upcoming tvOS 27.2.1 update will bring Siri AI to the 2nd- and 3rd-generation Apple TV 4K models, according...</span><span class="s-auth">aut. Juli Clover</span></span>
+        <span class="s-meta"><time datetime="2026-11-12T23:57:48+00:00">00:57</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame alert" id="evt-dac53ecf2d1e" data-key="dac53ecf2d1e" data-code="EVT-7374" data-n="5" data-latest="2026-11-13T19:00:35+00:00" data-cat="bezpieczenstwo" data-ai-generated-title="true" data-search="major microsoft 365 outage continues globalna awaria usług microsoft 365 trwa drugi dzień major microsoft 365 outage continues [update] outage disrupts outlook and other microsoft 365 apps microsoft struggles to restore outlook, teams, and other services as global outage enters second day outlook, teams, and other microsoft 365 services are still down as exec expresses ‘regret’ microsoft &#34;regrets&#34; outlook, exchange, sharepoint outage after admitting it still can&#39;t fix" style="--i:5">
+    <a class="thumb" href="/techagregator/podsumowanie/dac53ecf2d1e/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/bezpieczenstwo-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code"><svg class="ico" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg> EVT-7374</span><span class="cat">BEZPIECZEŃSTWO</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/dac53ecf2d1e/">Globalna awaria usług Microsoft 365 trwa drugi dzień</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="dac53ecf2d1e"><span class="roll">5</span>&nbsp;<span class="srcw">ŹRÓDEŁ</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-dac53ecf2d1e" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T04:50:02+00:00" data-t0="2026-11-13T04:50:02+00:00" title="pierwsza publikacja 13.11.2026 05:50">wczoraj, 05:50</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/dac53ecf2d1e/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-dac53ecf2d1e" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/11/13/major-microsoft-365-outage-continues/" target="_blank" rel="noopener" hreflang="en">Major Microsoft 365 Outage Continues</a><span class="s-lead">The worldwide Microsoft 365 outage continues, leaving users unable to access email and disrupting features in...</span><span class="s-auth">aut. Hartley Charlton</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T11:55:16+00:00">12:55</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/thurrott.png" alt="" width="14" height="14" loading="lazy">Thurrott</span>
+        <span class="s-txt"><a href="https://www.thurrott.com/cloud/343822/outage-disrupts-outlook-and-other-microsoft-365-apps" target="_blank" rel="noopener" hreflang="en">[Update] Outage Disrupts Outlook and Other Microsoft 365 Apps</a><span class="s-lead">Several Microsoft 365 services have been affected by an outage since yesterday, and users may still be unable...</span><span class="s-auth">aut. Laurent Giret</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T11:13:09+00:00">12:13</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techspot.png" alt="" width="14" height="14" loading="lazy">TechSpot</span>
+        <span class="s-txt"><a href="https://www.techspot.com/news/114542-microsoft-struggles-restore-outlook-teams-other-services-global.html" target="_blank" rel="noopener" hreflang="en">Microsoft struggles to restore Outlook, Teams, and other services as global outage enters second day</a><span class="s-auth">aut. Kishalaya Kundu</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T10:15:00+00:00">11:15</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/microsoft-outlook-still-down-3734796/" target="_blank" rel="noopener" hreflang="en">Outlook, Teams, and other Microsoft 365 services are still down as exec expresses ‘regret’</a><span class="s-auth">aut. Hadlee Simons</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T05:53:08+00:00">06:53</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/microsoft-regrets-outlook-exchange-sharepoint-outage-after-admitting-it-still-cant-fix/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Microsoft &#34;regrets&#34; Outlook, Exchange, SharePoint outage after admitting it still can&#39;t fix</a><span class="s-auth">aut. Sayan Sen</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T04:50:02+00:00">05:50</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-093e1892d384" data-key="093e1892d384" data-code="EVT-7924" data-n="4" data-latest="2026-11-14T17:04:01+00:00" data-cat="ai" data-ai-generated-title="true" data-search="google wallet now lets gemini analyze your spending and suggest ways to save gemini z integracją google wallet w usa: analiza finansów i wskazówki oszczędzania google follows chatgpt with gemini finance insights that can analyze your bank accounts google brings wallet to gemini google wallet now lets gemini analyze your spending and suggest ways to save you can now set up gemini’s google wallet integration for ‘personal finance insights’" style="--i:6">
+    <a class="thumb" href="/techagregator/podsumowanie/093e1892d384/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/ai-2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/ai-2.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/ai-2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-7924</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/093e1892d384/">Gemini z integracją Google Wallet w USA: analiza finansów i wskazówki oszczędzania</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="093e1892d384"><span class="roll">4</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-093e1892d384" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T17:51:44+00:00" data-t0="2026-11-13T17:51:44+00:00" title="pierwsza publikacja 13.11.2026 18:51">wczoraj, 18:51</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/093e1892d384/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-093e1892d384" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/google-follows-chatgpt-with-gemini-finance-insights-that-can-analyze-your-bank-accounts/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Google follows ChatGPT with Gemini finance insights that can analyze your bank accounts</a><span class="s-auth">aut. Pradeep Viswanathan</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T17:04:01+00:00">18:04</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/thurrott.png" alt="" width="14" height="14" loading="lazy">Thurrott</span>
+        <span class="s-txt"><a href="https://www.thurrott.com/a-i/google-gemini-a-i/343856/google-brings-wallet-to-gemini" target="_blank" rel="noopener" hreflang="en">Google Brings Wallet to Gemini</a><span class="s-lead">Gemini users in the U.S. can now connect their Google Wallet to the AI assistant for tailored financial...</span><span class="s-auth">aut. Paul Thurrott</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T21:55:27+00:00">22:55</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/google-wallet-gemini-integration-us-3735150/" target="_blank" rel="noopener" hreflang="en">Google Wallet now lets Gemini analyze your spending and suggest ways to save</a><span class="s-auth">aut. Shimul Sood</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T18:42:12+00:00">19:42</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5google.png" alt="" width="14" height="14" loading="lazy">9to5Google</span>
+        <span class="s-txt"><a href="https://9to5google.com/2026/11/13/gemini-google-wallet/" target="_blank" rel="noopener" hreflang="en">You can now set up Gemini’s Google Wallet integration for ‘personal finance insights’</a><span class="s-lead">As we spotted in September , the Gemini app is adding Google Wallet integration in the US that makes possible...</span><span class="s-auth">aut. Abner Li</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T17:51:44+00:00">18:51</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-8250334af197" data-key="8250334af197" data-code="EVT-4087" data-n="4" data-latest="2026-11-14T16:34:15+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="‘broken and shattered’ nvidia ceo jensen huang surrendered during resignation meeting, report claims jensen huang rezygnuje ze stanowiska ceo nvidii asian governments react to nvidia ceo jensen huang’s exit letter seeking ex ceo jensen huang’s return is “obviously fake,” says nvidia vp after he is made a named signatory alongside top leadership at firm ‘broken and shattered’ nvidia ceo jensen huang surrendered during resignation meeting, report claims ‘it’s a mistake’: reactions from tech leaders on jensen huang’s resignation" style="--i:7">
+    <a class="thumb" href="/techagregator/podsumowanie/8250334af197/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/sprzet-1.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/sprzet-1.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/sprzet-1.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-4087</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/8250334af197/">Jensen Huang rezygnuje ze stanowiska CEO Nvidii</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="8250334af197"><span class="roll">4</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-8250334af197" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-12T21:45:00+00:00" data-t0="2026-11-12T21:45:00+00:00" title="pierwsza publikacja 12.11.2026 22:45">12.11, 22:45</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/8250334af197/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-8250334af197" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techcrunch.png" alt="" width="14" height="14" loading="lazy">TechCrunch</span>
+        <span class="s-txt"><a href="https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/" target="_blank" rel="noopener" hreflang="en">Asian governments react to Nvidia CEO Jensen Huang’s exit</a><span class="s-auth">aut. Kate Park</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-14T16:34:15+00:00">17:34</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/wccftech.png" alt="" width="14" height="14" loading="lazy">Wccftech</span>
+        <span class="s-txt"><a href="https://wccftech.com/letter-seeking-ex-ceo-jensen-huangs-return-is-obviously-fake-says-nvidia-vp-after-he-is-made-a-named-signatory-alongside-top-leadership-at-firm/" target="_blank" rel="noopener" hreflang="en">Letter Seeking Ex CEO Jensen Huang’s Return Is “Obviously Fake,” Says NVIDIA VP After He Is Made A Named Signatory Alongside Top Leadership At Firm</a><span class="s-auth">aut. Ramish Zafar</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T21:24:26+00:00">22:24</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tomshw.png" alt="" width="14" height="14" loading="lazy">Tom&#39;s Hardware</span>
+        <span class="s-txt"><a href="https://www.tomshardware.com/tech-industry/broken-and-shattered-nvidia-ceo-jensen-huang-surrendered-during-resignation-meeting-report-claims-thousands-of-employees-rally-calling-for-reinstatement-on-internal-forum" target="_blank" rel="noopener" hreflang="en">‘Broken and shattered’ Nvidia CEO Jensen Huang surrendered during resignation meeting, report claims</a><span class="s-auth">aut. Jowi Morales</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T13:16:16+00:00">14:16</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/verge.png" alt="" width="14" height="14" loading="lazy">The Verge</span>
+        <span class="s-txt"><a href="https://www.theverge.com/tech/1032434/nvidia-jensen-huang-resignation-reactions" target="_blank" rel="noopener" hreflang="en">‘It’s a mistake’: reactions from tech leaders on Jensen Huang’s resignation</a><span class="s-auth">aut. Jay Peters</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-12T21:45:00+00:00">22:45</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-13c95fb22a8a" data-key="13c95fb22a8a" data-code="EVT-6058" data-n="3" data-latest="2026-11-14T20:04:44+00:00" data-cat="inne" data-ai-generated-title="false" data-search="tesla starts taking cybercab orders for personal use  tesla opens cybercab pre-orders ‘for personal use,’ with geo restrictions and a $299 monthly fee tesla is inviting some people to buy a cybercab ‘for personal use’ — but read the fine print tesla starts taking cybercab orders for personal use" style="--i:8">
+    <a class="thumb" href="/techagregator/podsumowanie/13c95fb22a8a/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/inne-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/inne-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/inne-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6058</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/13c95fb22a8a/">Tesla starts taking Cybercab orders for personal use</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="13c95fb22a8a"><span class="roll">3</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-13c95fb22a8a" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-14T13:59:48+00:00" data-t0="2026-11-14T13:59:48+00:00" title="pierwsza publikacja 14.11.2026 14:59">7 godz. 15 min temu</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-13c95fb22a8a" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techcrunch.png" alt="" width="14" height="14" loading="lazy">TechCrunch</span>
+        <span class="s-txt"><a href="https://techcrunch.com/2026/11/14/tesla-opens-cybercab-pre-orders-for-personal-use-with-geo-restrictions-and-a-299-monthly-fee/" target="_blank" rel="noopener" hreflang="en">Tesla opens Cybercab pre-orders ‘for personal use,’ with geo restrictions and a $299 monthly fee</a><span class="s-auth">aut. Anthony Ha</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-14T20:04:44+00:00">21:04</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/verge.png" alt="" width="14" height="14" loading="lazy">The Verge</span>
+        <span class="s-txt"><a href="https://www.theverge.com/transportation/1033844/tesla-personal-cybercab-orders-299-subscription-fine-print" target="_blank" rel="noopener" hreflang="en">Tesla is inviting some people to buy a Cybercab ‘for personal use’ - but read the fine print</a><span class="s-auth">aut. Andrew J. Hawkins</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-14T14:18:36+00:00">15:18</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/engadget.png" alt="" width="14" height="14" loading="lazy">Engadget</span>
+        <span class="s-txt"><a href="https://www.engadget.com/2316848/tesla-starts-taking-cybercab-orders-for-personal-use/" target="_blank" rel="noopener" hreflang="en">Tesla starts taking Cybercab orders for personal use</a><span class="s-auth">aut. staff@engadget.com</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T13:59:48+00:00">14:59</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-4ac59eb4db8c" data-key="4ac59eb4db8c" data-code="EVT-5548" data-n="3" data-latest="2026-11-13T19:45:19+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="youtube app not working on your new apple tv? here&#39;s the fix problemy z aplikacją youtube na nowym apple tv 4k youtube is having problems with the new apple tv 4k youtube app not working on your new apple tv? here&#39;s the fix psa: youtube app not working on your new apple tv? here’s the fix" style="--i:9">
+    <a class="thumb" href="/techagregator/podsumowanie/4ac59eb4db8c/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/sprzet-1.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/sprzet-1.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/sprzet-1.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-5548</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/4ac59eb4db8c/">Problemy z aplikacją YouTube na nowym Apple TV 4K</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="4ac59eb4db8c"><span class="roll">3</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-4ac59eb4db8c" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T14:21:50+00:00" data-t0="2026-11-13T14:21:50+00:00" title="pierwsza publikacja 13.11.2026 15:21">wczoraj, 15:21</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/4ac59eb4db8c/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-4ac59eb4db8c" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/youtube-apple-tv-4k-problems-3735158/" target="_blank" rel="noopener" hreflang="en">YouTube is having problems with the new Apple TV 4K</a><span class="s-auth">aut. Ryan McNeal</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T19:45:19+00:00">20:45</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/11/13/youtube-app-apple-tv-not-working-fix/" target="_blank" rel="noopener" hreflang="en">YouTube App Not Working on Your New Apple TV? Here&#39;s the Fix</a><span class="s-lead">The fourth-generation Apple TV 4K began arriving to customers today, and some users noticed the YouTube app is...</span><span class="s-auth">aut. Joe Rossignol</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T18:18:12+00:00">19:18</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/11/13/new-apple-tv-youtube-broken-fix/" target="_blank" rel="noopener" hreflang="en">PSA: YouTube app not working on your new Apple TV? Here’s the fix</a><span class="s-lead">If you just unboxed your new Apple TV 4K, you might run into a problem using the YouTube app.</span><span class="s-auth">aut. Chance Miller</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T14:21:50+00:00">15:21</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-773fa6aeb149" data-key="773fa6aeb149" data-code="EVT-1497" data-n="3" data-latest="2026-11-13T15:25:42+00:00" data-cat="ai" data-ai-generated-title="true" data-search="nie tylko microsoft ma problem. anthropic potwierdza awarię claude awaria claude: anthropic potwierdza problemy, usługa przywrócona anthropic’s claude is experiencing a widespread outage, causing elevated errors (update: back up) nie tylko microsoft ma problem. anthropic potwierdza awarię claude anthropic blames microsoft for claude outage &amp; downtime as user authentication breaks" style="--i:10">
+    <a class="thumb" href="/techagregator/podsumowanie/773fa6aeb149/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/ai-2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/ai-2.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/ai-2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-1497</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/773fa6aeb149/">Awaria Claude: Anthropic potwierdza problemy, usługa przywrócona</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="773fa6aeb149"><span class="roll">3</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-773fa6aeb149" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T11:03:57+00:00" data-t0="2026-11-13T11:03:57+00:00" title="pierwsza publikacja 13.11.2026 12:03">wczoraj, 12:03</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/773fa6aeb149/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-773fa6aeb149" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/anthropic-claude-outage-nov-2026-3735078/" target="_blank" rel="noopener" hreflang="en">Anthropic’s Claude is experiencing a widespread outage, causing elevated errors (Update: Back up)</a><span class="s-auth">aut. Ryan McNeal</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T15:25:42+00:00">16:25</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1104637-awaria-claude-problemy-z-logowaniem/" target="_blank" rel="noopener" hreflang="pl">Nie tylko Microsoft ma problem. Anthropic potwierdza awarię Claude</a><span class="s-auth">aut. Jolanta Szczepaniak</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T13:38:00+00:00">14:38</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/anthropic-blames-microsoft-for-claude-outage--downtime-as-user-authentication-breaks/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Anthropic blames Microsoft for Claude outage &amp; downtime as user authentication breaks</a><span class="s-auth">aut. Sayan Sen</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T11:03:57+00:00">12:03</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-44c5c5c963e8" data-key="44c5c5c963e8" data-code="EVT-5944" data-n="3" data-latest="2026-11-13T14:11:00+00:00" data-cat="ai" data-ai-generated-title="true" data-search="whoop launches humans, a social network that verifies members by their heartbeat whoop uruchamia humans - sieć społecznościową w aplikacji whoop launches humans, a social network that verifies members by their heartbeat whoop launched a social network where every user has a ‘verified heartbeat’ whoop humans turns your sleep, recovery, and workouts into an ai-free social feed" style="--i:11">
+    <a class="thumb" href="/techagregator/podsumowanie/44c5c5c963e8/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/ai-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/ai-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/ai-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-5944</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/44c5c5c963e8/">Whoop uruchamia Humans - sieć społecznościową w aplikacji</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="44c5c5c963e8"><span class="roll">3</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-44c5c5c963e8" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-12T22:25:16+00:00" data-t0="2026-11-12T22:25:16+00:00" title="pierwsza publikacja 12.11.2026 23:25">12.11, 23:25</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/44c5c5c963e8/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-44c5c5c963e8" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/notebookcheck.png" alt="" width="14" height="14" loading="lazy">Notebookcheck</span>
+        <span class="s-txt"><a href="https://www.notebookcheck.net/Whoop-launches-Humans-a-social-network-that-verifies-members-by-their-heartbeat.1449436.0.html" target="_blank" rel="noopener" hreflang="en">Whoop launches Humans, a social network that verifies members by their heartbeat</a><span class="s-lead">Whoop has launched Humans, an in-app social network that lets members follow friends and family and share...</span><span class="s-auth">aut. Antony Muchiri</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T14:11:00+00:00">15:11</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/verge.png" alt="" width="14" height="14" loading="lazy">The Verge</span>
+        <span class="s-txt"><a href="https://www.theverge.com/gadgets/1032630/whoop-humans-social-network" target="_blank" rel="noopener" hreflang="en">Whoop launched a social network where every user has a ‘verified heartbeat’</a><span class="s-auth">aut. Stevie Bonifield</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-12T23:43:22+00:00">00:43</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/whoop-humans-launch-3734748/" target="_blank" rel="noopener" hreflang="en">WHOOP Humans turns your sleep, recovery, and workouts into an AI-free social feed</a><span class="s-auth">aut. Ryan McNeal</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-12T22:25:16+00:00">23:25</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-dca781018f4f" data-key="dca781018f4f" data-code="EVT-2239" data-n="3" data-latest="2026-11-13T11:46:01+00:00" data-cat="gry" data-ai-generated-title="true" data-search="microsoft casually confirms wolfenstein 3 and a new game from id software microsoft i bethesda potwierdzają prace nad wolfenstein 3 oraz nową grą id software microsoft casually confirms wolfenstein 3 and a new game from id software wolfenstein iii gets a massive update xbox announces wolfenstein 3" style="--i:12">
+    <a class="thumb" href="/techagregator/podsumowanie/dca781018f4f/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/5d6103fabbb1-ad5d21.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/5d6103fabbb1-ad5d21.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/5d6103fabbb1-ad5d21.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-2239</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/dca781018f4f/">Microsoft i Bethesda potwierdzają prace nad Wolfenstein 3 oraz nową grą id Software</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="dca781018f4f"><span class="roll">3</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-dca781018f4f" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T00:11:44+00:00" data-t0="2026-11-13T00:11:44+00:00" title="pierwsza publikacja 13.11.2026 01:11">wczoraj, 01:11</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/dca781018f4f/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-dca781018f4f" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/microsoft-casually-confirms-wolfenstein-3-and-a-new-game-from-id-software/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Microsoft casually confirms Wolfenstein 3 and a new game from id Software</a><span class="s-auth">aut. Pulasthi Ariyasinghe</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T11:46:01+00:00">12:46</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/notebookcheck.png" alt="" width="14" height="14" loading="lazy">Notebookcheck</span>
+        <span class="s-txt"><a href="https://www.notebookcheck.net/Wolfenstein-3-gets-a-massive-update.1449486.0.html" target="_blank" rel="noopener" hreflang="en">Wolfenstein III gets a massive update</a><span class="s-lead">Microsoft and Bethesda have confirmed that Wolfenstein 3 is in production at MachineGames, while id Software...</span><span class="s-auth">aut. Darryl Linington</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T09:35:00+00:00">10:35</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/verge.png" alt="" width="14" height="14" loading="lazy">The Verge</span>
+        <span class="s-txt"><a href="https://www.theverge.com/news/1032431/xbox-bethesda-wolfenstein-3" target="_blank" rel="noopener" hreflang="en">Xbox announces Wolfenstein 3</a><span class="s-auth">aut. Tom Warren</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T00:11:44+00:00">01:11</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-6f2cda4c9671" data-key="6f2cda4c9671" data-code="EVT-6497" data-n="2" data-latest="2026-11-14T17:59:00+00:00" data-cat="gry" data-ai-generated-title="true" data-search="masz ps5? wkrótce te gry będą działać lepiej na konsoli sony ulepsza grafikę na ps5 w ośmiu grach masz ps5? wkrótce te gry będą działać lepiej na konsoli playstation 5 oferuje lepszą grafikę w 8 grach. sony wreszcie ulepszyło starą konsolę o nową technologię rodem z ps5 pro [aktualizacja]" style="--i:13">
+    <a class="thumb" href="/techagregator/podsumowanie/6f2cda4c9671/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/d9b0ad9ae429-323aef.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/d9b0ad9ae429-323aef.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/d9b0ad9ae429-323aef.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6497</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/6f2cda4c9671/">Sony ulepsza grafikę na PS5 w ośmiu grach</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="6f2cda4c9671"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-6f2cda4c9671" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T20:22:12+00:00" data-t0="2026-11-13T20:22:12+00:00" title="pierwsza publikacja 13.11.2026 21:22">wczoraj, 21:22</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/6f2cda4c9671/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-6f2cda4c9671" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/telepolis.png" alt="" width="14" height="14" loading="lazy">Telepolis</span>
+        <span class="s-txt"><a href="https://www.telepolis.pl/rozrywka/gry/masz-ps5-wkrotce-te-gry-beda-dzialac-lepiej-na-konsoli" target="_blank" rel="noopener" hreflang="pl">Masz PS5? Wkrótce te gry będą działać lepiej na konsoli</a><span class="s-lead">Nie tylko PS5 Pro dostaje ulepszenia w grach.</span></span>
+        <span class="s-meta"><time datetime="2026-11-14T17:59:00+00:00">18:59</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/gryonline.png" alt="" width="14" height="14" loading="lazy">Gry-Online</span>
+        <span class="s-txt"><a href="https://www.gry-online.pl/newsroom/playstation-5-od-dzis-zaoferuje-lepsza-grafike-sony-wreszcie-ulep/zf31dbe" target="_blank" rel="noopener" hreflang="pl">PlayStation 5 oferuje lepszą grafikę w 8 grach. Sony wreszcie ulepszyło starą konsolę o nową technologię rodem z PS5 Pro [Aktualizacja]</a></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T20:22:12+00:00">21:22</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame alert" id="evt-ce37d0a1f48e" data-key="ce37d0a1f48e" data-code="EVT-7966" data-n="2" data-latest="2026-11-14T15:51:00+00:00" data-cat="bezpieczenstwo" data-ai-generated-title="false" data-search="the microsoft 365 outage sent japan back to fax machines and landlines  the microsoft 365 outage sent japan back to fax machines and landlines japanese workers return to fax machines during ongoing microsoft 365 outage" style="--i:14">
+    <a class="thumb" href="/techagregator/podsumowanie/ce37d0a1f48e/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-1.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-1.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/bezpieczenstwo-1.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code"><svg class="ico" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg> EVT-7966</span><span class="cat">BEZPIECZEŃSTWO</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/ce37d0a1f48e/">The Microsoft 365 outage sent Japan back to fax machines and landlines</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="ce37d0a1f48e"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-ce37d0a1f48e" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T12:57:37+00:00" data-t0="2026-11-13T12:57:37+00:00" title="pierwsza publikacja 13.11.2026 13:57">wczoraj, 13:57</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-ce37d0a1f48e" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techspot.png" alt="" width="14" height="14" loading="lazy">TechSpot</span>
+        <span class="s-txt"><a href="https://www.techspot.com/news/114556-microsoft-365-outage-sent-japan-back-fax-machines.html" target="_blank" rel="noopener" hreflang="en">The Microsoft 365 outage sent Japan back to fax machines and landlines</a><span class="s-auth">aut. Kishalaya Kundu</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T15:51:00+00:00">16:51</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tomshw.png" alt="" width="14" height="14" loading="lazy">Tom&#39;s Hardware</span>
+        <span class="s-txt"><a href="https://www.tomshardware.com/software/japanese-workers-return-to-fax-machines-during-ongoing-microsoft-365-outage-were-going-full-analog-say-workers-forced-to-ditch-pdfs" target="_blank" rel="noopener" hreflang="en">Japanese workers return to fax machines during ongoing Microsoft 365 outage</a><span class="s-auth">aut. Stephen Warwick</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T12:57:37+00:00">13:57</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-4abe58790403" data-key="4abe58790403" data-code="EVT-7555" data-n="2" data-latest="2026-11-14T13:05:05+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="early black friday apple deals: airpods, airtag 2, macbook air, apple pencil, mac mini, more wczesne promocje black friday na produkty apple early black friday apple deals: airpods, airtag 2, macbook air, apple pencil, mac mini, more best apple deals of the week: airtag 2 hits record low price, plus early black friday sales" style="--i:15">
+    <a class="thumb" href="/techagregator/podsumowanie/4abe58790403/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/sprzet-2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/sprzet-2.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/sprzet-2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-7555</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/4abe58790403/">Wczesne promocje Black Friday na produkty Apple</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="4abe58790403"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-4abe58790403" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T14:53:49+00:00" data-t0="2026-11-13T14:53:49+00:00" title="pierwsza publikacja 13.11.2026 15:53">wczoraj, 15:53</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/4abe58790403/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-4abe58790403" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/11/14/early-black-friday-apple-deals-apple-tv-4k-airpods/" target="_blank" rel="noopener" hreflang="en">Early Black Friday Apple deals: AirPods, AirTag 2, MacBook Air, Apple Pencil, Mac mini, more</a><span class="s-lead">Alongside the release of the new Apple TV 4K , we also have loads of the early Black Friday offers flying with...</span><span class="s-auth">aut. Justin Kahn</span></span>
+        <span class="s-meta"><time datetime="2026-11-14T13:05:05+00:00">14:05</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/11/13/best-apple-deals-of-the-week-11-13-26/" target="_blank" rel="noopener" hreflang="en">Best Apple Deals of the Week: AirTag 2 Hits Record Low Price, Plus Early Black Friday Sales</a><span class="s-lead">Black Friday is two weeks away, and this week we saw numerous early discount events pop up online, including...</span><span class="s-auth">aut. Mitchel Broussard</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T14:53:49+00:00">15:53</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-637917d98ff7" data-key="637917d98ff7" data-code="EVT-6775" data-n="2" data-latest="2026-11-14T12:16:00+00:00" data-cat="gry" data-ai-generated-title="true" data-search="laid-off doom developers form employee-owned studio hidden horses, with a running man-inspired shooter in the works byli pracownicy id software zakładają studio hidden horses laid-off doom developers form employee-owned studio hidden horses, with a running man-inspired shooter in the works ex-id software devs form new studio hidden horses, dedicated to single-player fps games" style="--i:16">
+    <a class="thumb" href="/techagregator/podsumowanie/637917d98ff7/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/gry-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/gry-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/gry-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6775</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/637917d98ff7/">Byli pracownicy id Software zakładają studio Hidden Horses</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="637917d98ff7"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-637917d98ff7" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T13:00:48+00:00" data-t0="2026-11-13T13:00:48+00:00" title="pierwsza publikacja 13.11.2026 14:00">wczoraj, 14:00</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/637917d98ff7/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-637917d98ff7" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/notebookcheck.png" alt="" width="14" height="14" loading="lazy">Notebookcheck</span>
+        <span class="s-txt"><a href="https://www.notebookcheck.net/Laid-off-DOOM-developers-form-employee-owned-studio-Hidden-Horses-with-a-Running-Man-inspired-shooter-in-the-works.1450240.0.html" target="_blank" rel="noopener" hreflang="en">Laid-off DOOM developers form employee-owned studio Hidden Horses, with a Running Man-inspired shooter in the works</a><span class="s-lead">Around 20 developers let go from id Software in July have regrouped as Hidden Horses, a studio owned by the...</span><span class="s-auth">aut. Rahim Amir Noorali</span></span>
+        <span class="s-meta"><time datetime="2026-11-14T12:16:00+00:00">13:16</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/kitguru.png" alt="" width="14" height="14" loading="lazy">KitGuru</span>
+        <span class="s-txt"><a href="https://www.kitguru.net/gaming/mustafa-mahmoud/ex-id-software-devs-form-new-studio-hidden-horses-dedicated-to-single-player-fps-games/" target="_blank" rel="noopener" hreflang="en">Ex-id Software devs form new studio Hidden Horses, dedicated to single-player FPS games</a><span class="s-lead">A collection of ex-id Software developers have banded together to form the employee-owned ‘Hidden Horses’...</span><span class="s-auth">aut. Mustafa Mahmoud</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T13:00:48+00:00">14:00</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-60e704b4d3c8" data-key="60e704b4d3c8" data-code="EVT-1432" data-n="2" data-latest="2026-11-14T11:46:15+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="intel reclaims 70% desktop cpu market share as amd falls below 30% in surprise q3 2026 turnaround intel odzyskuje ponad 70% rynku procesorów desktop, amd poniżej 30% intel reclaims 70% desktop cpu market share as amd falls below 30% in surprise q3 2026 turnaround intel stages surprise desktop cpu comeback as amd&#39;s market share falls below 30%" style="--i:17">
+    <a class="thumb" href="/techagregator/podsumowanie/60e704b4d3c8/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/1e7bf1c74da1-961f3a.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/1e7bf1c74da1-961f3a.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/1e7bf1c74da1-961f3a.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-1432</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/60e704b4d3c8/">Intel odzyskuje ponad 70% rynku procesorów desktop, AMD poniżej 30%</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="60e704b4d3c8"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-60e704b4d3c8" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T20:11:00+00:00" data-t0="2026-11-13T20:11:00+00:00" title="pierwsza publikacja 13.11.2026 21:11">wczoraj, 21:11</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/60e704b4d3c8/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-60e704b4d3c8" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/wccftech.png" alt="" width="14" height="14" loading="lazy">Wccftech</span>
+        <span class="s-txt"><a href="https://wccftech.com/intel-reclaims-70-desktop-cpu-market-share-as-amd-falls-below-30-in-surprise-q3-2026-turnaround/" target="_blank" rel="noopener" hreflang="en">Intel Reclaims 70% Desktop CPU Market Share As AMD Falls Below 30% In Surprise Q3 2026 Turnaround</a><span class="s-auth">aut. Sebastian Castellanos</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T11:46:15+00:00">12:46</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techspot.png" alt="" width="14" height="14" loading="lazy">TechSpot</span>
+        <span class="s-txt"><a href="https://www.techspot.com/news/114552-intel-stages-surprise-desktop-cpu-comeback-amd-market.html" target="_blank" rel="noopener" hreflang="en">Intel stages surprise desktop CPU comeback as AMD&#39;s market share falls below 30%</a><span class="s-auth">aut. Kishalaya Kundu</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T20:11:00+00:00">21:11</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-53a8659c12b5" data-key="53a8659c12b5" data-code="EVT-8357" data-n="2" data-latest="2026-11-14T11:31:00+00:00" data-cat="inne" data-ai-generated-title="true" data-search="to najwyżej oceniany parkside w lidlu. teraz tańszy o 30 procent lidl obniża cenę popularnego narzędzia parkside to najwyżej oceniany parkside w lidlu. teraz tańszy o 30 procent lidl rozbija bank. czarny parkside dostępny za grosze" style="--i:18">
+    <a class="thumb" href="/techagregator/podsumowanie/53a8659c12b5/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/bb5fb26d10d6-8eabd2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/bb5fb26d10d6-8eabd2.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/bb5fb26d10d6-8eabd2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-8357</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/53a8659c12b5/">Lidl obniża cenę popularnego narzędzia Parkside</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="53a8659c12b5"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-53a8659c12b5" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T07:30:52+00:00" data-t0="2026-11-13T07:30:52+00:00" title="pierwsza publikacja 13.11.2026 08:30">wczoraj, 08:30</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/53a8659c12b5/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-53a8659c12b5" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1104978-wiertarko-wkretarka-parkside-lidl-cena/" target="_blank" rel="noopener" hreflang="pl">To najwyżej oceniany Parkside w Lidlu. Teraz tańszy o 30 procent</a><span class="s-auth">aut. Jolanta Szczepaniak</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T11:31:00+00:00">12:31</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/antyweb.png" alt="" width="14" height="14" loading="lazy">Antyweb</span>
+        <span class="s-txt"><a href="https://antyweb.pl/lidl-rozbija-bank-czarny-parkside-dostepny-za-grosze" target="_blank" rel="noopener" hreflang="pl">Lidl rozbija bank. Czarny Parkside dostępny za grosze</a><span class="s-auth">aut. Dawid Szafraniak</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T07:30:52+00:00">08:30</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame alert" id="evt-a351355edf69" data-key="a351355edf69" data-code="EVT-8489" data-n="2" data-latest="2026-11-14T10:14:01+00:00" data-cat="bezpieczenstwo" data-ai-generated-title="false" data-search="uber confirms data breach that stole thousands of drivers&#39; information  uber confirms data breach that stole thousands of drivers&#39; information uber confirms hackers stole thousands of drivers’ license information in data breach" style="--i:19">
+    <a class="thumb" href="/techagregator/podsumowanie/a351355edf69/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/bezpieczenstwo-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/bezpieczenstwo-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code"><svg class="ico" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg> EVT-8489</span><span class="cat">BEZPIECZEŃSTWO</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/a351355edf69/">Uber confirms data breach that stole thousands of drivers&#39; information</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="a351355edf69"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-a351355edf69" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T14:57:55+00:00" data-t0="2026-11-13T14:57:55+00:00" title="pierwsza publikacja 13.11.2026 15:57">wczoraj, 15:57</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-a351355edf69" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/uber-confirms-data-breach-that-stole-thousands-of-drivers-information/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Uber confirms data breach that stole thousands of drivers&#39; information</a><span class="s-auth">aut. Justin Luna</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T10:14:01+00:00">11:14</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techcrunch.png" alt="" width="14" height="14" loading="lazy">TechCrunch</span>
+        <span class="s-txt"><a href="https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/" target="_blank" rel="noopener" hreflang="en">Uber confirms hackers stole thousands of drivers’ license information in data breach</a><span class="s-auth">aut. Zack Whittaker</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T14:57:55+00:00">15:57</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-5914d8d09c73" data-key="5914d8d09c73" data-code="EVT-8179" data-n="2" data-latest="2026-11-14T09:49:26+00:00" data-cat="smartfony" data-ai-generated-title="true" data-search="aktualizacja android auto 18.2 już jest. w kodzie zmieniono ponad 100 elementów google udostępnia aktualizację android auto 18.2 w programie beta aktualizacja android auto 18.2 już jest. w kodzie zmieniono ponad 100 elementów android auto w nowej odsłonie. co przynosi aktualizacja 18.2?" style="--i:20">
+    <a class="thumb" href="/techagregator/podsumowanie/5914d8d09c73/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/5e7a32854f8a-20bcda.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/5e7a32854f8a-20bcda.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/5e7a32854f8a-20bcda.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-8179</span><span class="cat">SMARTFONY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/5914d8d09c73/">Google udostępnia aktualizację Android Auto 18.2 w programie beta</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="5914d8d09c73"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-5914d8d09c73" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T17:25:00+00:00" data-t0="2026-11-13T17:25:00+00:00" title="pierwsza publikacja 13.11.2026 18:25">wczoraj, 18:25</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/5914d8d09c73/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-5914d8d09c73" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/instalki.png" alt="" width="14" height="14" loading="lazy">Instalki.pl</span>
+        <span class="s-txt"><a href="https://www.instalki.pl/news/software/aktualizacja-android-auto-18-2-juz-jest-w-kodzie-zmieniono-ponad-100-elementow/" target="_blank" rel="noopener" hreflang="pl">Aktualizacja Android Auto 18.2 już jest. W kodzie zmieniono ponad 100 elementów</a><span class="s-lead">Google rozpoczęło udostępnianie aktualizacji Android Auto 18.2 dla uczestników programu beta.</span><span class="s-auth">aut. Piotr Sojski</span></span>
+        <span class="s-meta"><time datetime="2026-11-14T09:49:26+00:00">10:49</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1104769-android-auto-aktualizacja-18-2-beta/" target="_blank" rel="noopener" hreflang="pl">Android Auto w nowej odsłonie. Co przynosi aktualizacja 18.2?</a><span class="s-auth">aut. Marcin Ziółkowski</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T17:25:00+00:00">18:25</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-c95a2fac556e" data-key="c95a2fac556e" data-code="EVT-2830" data-n="2" data-latest="2026-11-14T09:32:01+00:00" data-cat="ai" data-ai-generated-title="false" data-search="faa expands ai advice to manage air traffic congestion across entire us airspace  faa expanded its &#34;smart&#34; ai air traffic control just before nationwide flight ground stop faa expands ai advice to manage air traffic congestion across entire us airspace" style="--i:21">
+    <a class="thumb" href="/techagregator/podsumowanie/c95a2fac556e/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/ai-2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/ai-2.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/ai-2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-2830</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/c95a2fac556e/">FAA expands AI advice to manage air traffic congestion across entire US airspace</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="c95a2fac556e"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-c95a2fac556e" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-12T22:28:47+00:00" data-t0="2026-11-12T22:28:47+00:00" title="pierwsza publikacja 12.11.2026 23:28">12.11, 23:28</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-c95a2fac556e" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/faa-expanded-its-smart-ai-air-traffic-control-just-before-nationwide-flight-ground-stop/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">FAA expanded its &#34;SMART&#34; AI air traffic control just before nationwide flight ground stop</a><span class="s-auth">aut. Sayan Sen</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-14T09:32:01+00:00">10:32</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/ars.png" alt="" width="14" height="14" loading="lazy">Ars Technica</span>
+        <span class="s-txt"><a href="https://arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/" target="_blank" rel="noopener" hreflang="en">FAA expands AI advice to manage air traffic congestion across entire US airspace</a><span class="s-auth">aut. Jeremy Hsu</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-12T22:28:47+00:00">23:28</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-f708f7a15c98" data-key="f708f7a15c98" data-code="EVT-6392" data-n="2" data-latest="2026-11-14T07:00:00+00:00" data-cat="ai" data-ai-generated-title="false" data-search="co dalej z nvidią po odejściu jensena huanga? oto trzy kluczowe rzeczy  co dalej z nvidią po odejściu jensena huanga? oto trzy kluczowe rzeczy jensen huang odchodzi z nvidii. jak zmieni się układ sił w branży ai?" style="--i:22">
+    <a class="thumb" href="/techagregator/podsumowanie/f708f7a15c98/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/ai-2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/ai-2.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/ai-2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6392</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/f708f7a15c98/">Co dalej z Nvidią po odejściu Jensena Huanga? Oto trzy kluczowe rzeczy</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="f708f7a15c98"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-f708f7a15c98" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T07:51:32+00:00" data-t0="2026-11-13T07:51:32+00:00" title="pierwsza publikacja 13.11.2026 08:51">wczoraj, 08:51</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-f708f7a15c98" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/komputerswiat.png" alt="" width="14" height="14" loading="lazy">Komputer Świat</span>
+        <span class="s-txt"><a href="https://www.komputerswiat.pl/nauka-i-technika/biznes-i-finanse/co-dalej-z-nvidia-po-odejsciu-jensena-huanga-oto-trzy-kluczowe-rzeczy/3gsf4dk" target="_blank" rel="noopener" hreflang="pl">Co dalej z Nvidią po odejściu Jensena Huanga? Oto trzy kluczowe rzeczy</a></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-14T07:00:00+00:00">08:00</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/itwiz.png" alt="" width="14" height="14" loading="lazy">ITwiz</span>
+        <span class="s-txt"><a href="https://itwiz.pl/jensen-huang-odchodzi-z-nvidii-jak-zmieni-sie-uklad-sil-w-branzy-ai/" target="_blank" rel="noopener" hreflang="pl">Jensen Huang odchodzi z Nvidii. Jak zmieni się układ sił w branży AI?</a><span class="s-auth">aut. Mikołaj Marszycki</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T07:51:32+00:00">08:51</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-a3eec27e07e1" data-key="a3eec27e07e1" data-code="EVT-3393" data-n="2" data-latest="2026-11-14T01:53:04+00:00" data-cat="inne" data-ai-generated-title="false" data-search="faa has lifted its third-ever nationwide ground stop  faa lifts nationwide ground stop that blocked takeoffs for hours faa has lifted its third-ever nationwide ground stop" style="--i:23">
+    <a class="thumb" href="/techagregator/podsumowanie/a3eec27e07e1/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/inne-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/inne-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/inne-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-3393</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/a3eec27e07e1/">FAA has lifted its third-ever nationwide ground stop</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="a3eec27e07e1"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-a3eec27e07e1" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T23:17:38+00:00" data-t0="2026-11-13T23:17:38+00:00" title="pierwsza publikacja 14.11.2026 00:17">21 godz. 57 min temu</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-a3eec27e07e1" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/verge.png" alt="" width="14" height="14" loading="lazy">The Verge</span>
+        <span class="s-txt"><a href="https://www.theverge.com/news/1033489/faa-ground-stop" target="_blank" rel="noopener" hreflang="en">FAA lifts nationwide ground stop that blocked takeoffs for hours</a><span class="s-auth">aut. Richard Lawler</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-14T01:53:04+00:00">02:53</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/ars.png" alt="" width="14" height="14" loading="lazy">Ars Technica</span>
+        <span class="s-txt"><a href="https://arstechnica.com/tech-policy/2026/11/faa-orders-third-nationwide-ground-stop-in-its-history/" target="_blank" rel="noopener" hreflang="en">FAA has lifted its third-ever nationwide ground stop</a><span class="s-auth">aut. Eric Bangeman</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T23:17:38+00:00">00:17</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-095fa52a4087" data-key="095fa52a4087" data-code="EVT-2775" data-n="2" data-latest="2026-11-13T20:34:19+00:00" data-cat="inne" data-ai-generated-title="true" data-search="epic wants apple punished for following letter but not spirit of the ruling epic games apeluje do sądu najwyższego usa o podtrzymanie orzeczenia o naruszeniu przez apple epic wants apple punished for following letter but not spirit of the ruling epic formally asks scotus to uphold contempt ruling against apple" style="--i:24">
+    <a class="thumb" href="/techagregator/podsumowanie/095fa52a4087/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/inne-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/inne-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/inne-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-2775</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/095fa52a4087/">Epic Games apeluje do Sądu Najwyższego USA o podtrzymanie orzeczenia o naruszeniu przez Apple</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="095fa52a4087"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-095fa52a4087" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T20:00:50+00:00" data-t0="2026-11-13T20:00:50+00:00" title="pierwsza publikacja 13.11.2026 21:00">wczoraj, 21:00</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/095fa52a4087/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-095fa52a4087" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/appleinsider.png" alt="" width="14" height="14" loading="lazy">AppleInsider</span>
+        <span class="s-txt"><a href="https://appleinsider.com/articles/26/11/13/epic-wants-apple-punished-for-following-letter-but-not-spirit-of-the-ruling?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Epic wants Apple punished for following letter but not spirit of the ruling</a><span class="s-lead">By any measure, Apple is precisely complying with the ruling that the Epic vs.</span><span class="s-auth">aut. Mike Wuerthele</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T20:34:19+00:00">21:34</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5mac.png" alt="" width="14" height="14" loading="lazy">9to5Mac</span>
+        <span class="s-txt"><a href="https://9to5mac.com/2026/11/13/epic-formally-asks-scotus-to-uphold-contempt-ruling-against-apple/" target="_blank" rel="noopener" hreflang="en">Epic formally asks SCOTUS to uphold contempt ruling against Apple</a><span class="s-lead">Epic Games has submitted its official response to Apple’s Supreme Court appeal, urging the justices to uphold...</span><span class="s-auth">aut. Marcus Mendes</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T20:00:50+00:00">21:00</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-e6ee539b0fbc" data-key="e6ee539b0fbc" data-code="EVT-5964" data-n="2" data-latest="2026-11-13T20:19:37+00:00" data-cat="smartfony" data-ai-generated-title="true" data-search="google maps, spotify, and more are coming to xiaomi 18 pro’s rear display xiaomi 18 pro z aplikacjami google i spotify na tylnym ekranie google maps, spotify, and more are coming to xiaomi 18 pro’s rear display the xiaomi 18 pro’s rear displays support google apps, spotify, and custom genai apps" style="--i:25">
+    <a class="thumb" href="/techagregator/podsumowanie/e6ee539b0fbc/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/f1eab06a8fa8-356f71.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/f1eab06a8fa8-356f71.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/f1eab06a8fa8-356f71.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-5964</span><span class="cat">SMARTFONY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/e6ee539b0fbc/">Xiaomi 18 Pro z aplikacjami Google i Spotify na tylnym ekranie</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="e6ee539b0fbc"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-e6ee539b0fbc" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T16:45:47+00:00" data-t0="2026-11-13T16:45:47+00:00" title="pierwsza publikacja 13.11.2026 17:45">wczoraj, 17:45</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/e6ee539b0fbc/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-e6ee539b0fbc" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/xiaomi-18-pro-rear-display-features-3735180/" target="_blank" rel="noopener" hreflang="en">Google Maps, Spotify, and more are coming to Xiaomi 18 Pro’s rear display</a><span class="s-auth">aut. Shimul Sood</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T20:19:37+00:00">21:19</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/9to5google.png" alt="" width="14" height="14" loading="lazy">9to5Google</span>
+        <span class="s-txt"><a href="https://9to5google.com/2026/11/13/the-xiaomi-18-pros-rear-displays-support-google-apps-spotify-and-custom-genai-apps/" target="_blank" rel="noopener" hreflang="en">The Xiaomi 18 Pro’s rear displays support Google apps, Spotify, and custom GenAI apps</a><span class="s-lead">The Xiaomi 18 Pro series’ rear displays might actually be useful, after all.</span><span class="s-auth">aut. Nicholas Sutrich</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T16:45:47+00:00">17:45</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-75b790346384" data-key="75b790346384" data-code="EVT-7412" data-n="2" data-latest="2026-11-13T19:04:01+00:00" data-cat="inne" data-ai-generated-title="true" data-search="garmin instinct 3 solar drops to $299.99 in this 40% off deal garmin instinct 3 z obniżkami przed black friday garmin instinct 3 solar drops to $299.99 in this 40% off deal garmin instinct 3 amoled falls by $200 in early black friday deal" style="--i:26">
+    <a class="thumb" href="/techagregator/podsumowanie/75b790346384/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/inne-1.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/inne-1.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/inne-1.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-7412</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/75b790346384/">Garmin Instinct 3 z obniżkami przed Black Friday</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="75b790346384"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-75b790346384" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T15:22:18+00:00" data-t0="2026-11-13T15:22:18+00:00" title="pierwsza publikacja 13.11.2026 16:22">wczoraj, 16:22</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/75b790346384/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-75b790346384" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/deals/garmin-instinct-3-solar-drops-to-29999-in-this-40-off-deal/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Garmin Instinct 3 Solar drops to $299.99 in this 40% off deal</a><span class="s-auth">aut. Ivan Jenic</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T19:04:01+00:00">20:04</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/garmin-instinct-3-amoled-deal-3735085/" target="_blank" rel="noopener" hreflang="en">Garmin Instinct 3 AMOLED falls by $200 in early Black Friday deal</a><span class="s-auth">aut. Matt Horne</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T15:22:18+00:00">16:22</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-f1b19e588764" data-key="f1b19e588764" data-code="EVT-7364" data-n="2" data-latest="2026-11-13T18:44:32+00:00" data-cat="sprzet" data-ai-generated-title="false" data-search="intel core ultra 7 260k quietly launches as newegg-exclusive cpu, paired with up to geforce rtx 5070 at $1999  intel core ultra 7 260k quietly launches as newegg-exclusive cpu, paired with up to geforce rtx 5070 at $1999 unannounced intel core ultra 7 260k cpu surfaces in newegg prebuilt gaming pcs" style="--i:27">
+    <a class="thumb" href="/techagregator/podsumowanie/f1b19e588764/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/sprzet-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/sprzet-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/sprzet-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-7364</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/f1b19e588764/">Intel Core Ultra 7 260K Quietly Launches As Newegg-Exclusive CPU, Paired With Up To GeForce RTX 5070 At $1999</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="f1b19e588764"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-f1b19e588764" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T16:30:00+00:00" data-t0="2026-11-13T16:30:00+00:00" title="pierwsza publikacja 13.11.2026 17:30">wczoraj, 17:30</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-f1b19e588764" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/wccftech.png" alt="" width="14" height="14" loading="lazy">Wccftech</span>
+        <span class="s-txt"><a href="https://wccftech.com/intel-core-ultra-7-260k-quietly-launches-as-newegg-exclusive-cpu/" target="_blank" rel="noopener" hreflang="en">Intel Core Ultra 7 260K Quietly Launches As Newegg-Exclusive CPU, Paired With Up To GeForce RTX 5070 At $1999</a><span class="s-auth">aut. Sarfraz Khan</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T18:44:32+00:00">19:44</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/tomshw.png" alt="" width="14" height="14" loading="lazy">Tom&#39;s Hardware</span>
+        <span class="s-txt"><a href="https://www.tomshardware.com/pc-components/cpus/unannounced-intel-core-ultra-7-260k-cpu-surfaces-in-newegg-prebuilt-gaming-pcs-intel-doesnt-have-official-specs-list-available-for-exclusive-arrow-lake-chip" target="_blank" rel="noopener" hreflang="en">Unannounced Intel Core Ultra 7 260K CPU surfaces in Newegg prebuilt gaming PCs</a><span class="s-auth">aut. Jake Roach</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-13T16:30:00+00:00">17:30</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-4f108f493f85" data-key="4f108f493f85" data-code="EVT-3317" data-n="2" data-latest="2026-11-13T17:02:00+00:00" data-cat="sprzet" data-ai-generated-title="true" data-search="huawei unveils sense g1 blood glucose sensor with smartwatch connectivity huawei prezentuje pierwszy czujnik glukozy sense g1 huawei unveils sense g1 blood glucose sensor with smartwatch connectivity after bp monitoring smartwatches, huawei reveals its first continuous glucose monitor" style="--i:28">
+    <a class="thumb" href="/techagregator/podsumowanie/4f108f493f85/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/sprzet-2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/sprzet-2.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/sprzet-2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-3317</span><span class="cat">SPRZĘT</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/4f108f493f85/">Huawei prezentuje pierwszy czujnik glukozy Sense G1</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="4f108f493f85"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-4f108f493f85" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T11:22:39+00:00" data-t0="2026-11-13T11:22:39+00:00" title="pierwsza publikacja 13.11.2026 12:22">wczoraj, 12:22</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/4f108f493f85/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-4f108f493f85" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/notebookcheck.png" alt="" width="14" height="14" loading="lazy">Notebookcheck</span>
+        <span class="s-txt"><a href="https://www.notebookcheck.net/Huawei-unveils-Sense-G1-blood-glucose-sensor-with-smartwatch-connectivity.1449843.0.html" target="_blank" rel="noopener" hreflang="en">Huawei unveils Sense G1 blood glucose sensor with smartwatch connectivity</a><span class="s-lead">Huawei has announced Sense G1, its first continuous glucose monitor, which promises to offer &#34;professional...</span><span class="s-auth">aut. Hannes Brecher</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T17:02:00+00:00">18:02</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidauthority.png" alt="" width="14" height="14" loading="lazy">Android Authority</span>
+        <span class="s-txt"><a href="https://www.androidauthority.com/huawei-continuous-glucose-monitor-cgm-3734906/" target="_blank" rel="noopener" hreflang="en">After BP monitoring smartwatches, HUAWEI reveals its first continuous glucose monitor</a><span class="s-auth">aut. Tushar Mehta</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T11:22:39+00:00">12:22</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-6f7d7c539a56" data-key="6f7d7c539a56" data-code="EVT-8918" data-n="2" data-latest="2026-11-13T16:02:46+00:00" data-cat="inne" data-ai-generated-title="true" data-search="jest decyzja prezydenta ws. ustawy o blokowaniu treści w sieci prezydent karol nawrocki zawetował ustawę o blokowaniu treści w internecie jest weto. prezydent nie podpisał ustawy o blokowaniu treści w internecie jest decyzja prezydenta ws. ustawy o blokowaniu treści w sieci" style="--i:29">
+    <a class="thumb" href="/techagregator/podsumowanie/6f7d7c539a56/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/inne-0.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/inne-0.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/inne-0.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-8918</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/6f7d7c539a56/">Prezydent Karol Nawrocki zawetował ustawę o blokowaniu treści w internecie</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="6f7d7c539a56"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-6f7d7c539a56" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T15:44:46+00:00" data-t0="2026-11-13T15:44:46+00:00" title="pierwsza publikacja 13.11.2026 16:44">wczoraj, 16:44</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/6f7d7c539a56/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-6f7d7c539a56" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1104733-karol-nawrocki-weto-ustawy-o-dsa/" target="_blank" rel="noopener" hreflang="pl">Jest weto. Prezydent nie podpisał ustawy o blokowaniu treści w internecie</a><span class="s-auth">aut. Marcin Ziółkowski</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T16:02:46+00:00">17:02</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/cyberdefence24.png" alt="" width="14" height="14" loading="lazy">CyberDefence24</span>
+        <span class="s-txt"><a href="https://cyberdefence24.pl/polityka-i-prawo/polska/jest-decyzja-prezydenta-ws-ustawy-o-blokowaniu-tresci-w-sieci" target="_blank" rel="noopener" hreflang="pl">Jest decyzja Prezydenta ws. ustawy o blokowaniu treści w sieci</a><span class="s-lead">Prezydent Karol Nawrocki zawetował ustawę dotyczącą blokowania nielegalnych treści w internecie.</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T15:44:46+00:00">16:44</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-0352e18c2b90" data-key="0352e18c2b90" data-code="EVT-1392" data-n="2" data-latest="2026-11-13T16:00:00+00:00" data-cat="inne" data-ai-generated-title="true" data-search="czołowi projektanci i mnóstwo technologii. tyle kosztują okulary od google google i samsung prezentują inteligentne okulary - ceny i podejście do prywatności prywatność i styl. samsung i google wiedzą, w jakim kierunku powinny iść inteligentne okulary czołowi projektanci i mnóstwo technologii. tyle kosztują okulary od google" style="--i:30">
+    <a class="thumb" href="/techagregator/podsumowanie/0352e18c2b90/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/inne-2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/inne-2.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/inne-2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-1392</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/0352e18c2b90/">Google i Samsung prezentują inteligentne okulary - ceny i podejście do prywatności</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="0352e18c2b90"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-0352e18c2b90" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T08:25:39+00:00" data-t0="2026-11-13T08:25:39+00:00" title="pierwsza publikacja 13.11.2026 09:25">wczoraj, 09:25</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/0352e18c2b90/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-0352e18c2b90" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/chip.png" alt="" width="14" height="14" loading="lazy">Chip.pl</span>
+        <span class="s-txt"><a href="https://www.chip.pl/2026/11/samsung-i-google-inteligentne-okulary-premiera-cena" target="_blank" rel="noopener" hreflang="pl">Prywatność i styl. Samsung i Google wiedzą, w jakim kierunku powinny iść inteligentne okulary</a><span class="s-lead">Przez lata największym problemem inteligentnych okularów było to, że wyglądały po prostu jak technologiczny...</span><span class="s-auth">aut. Joanna Marteklas</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T16:00:00+00:00">17:00</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/instalki.png" alt="" width="14" height="14" loading="lazy">Instalki.pl</span>
+        <span class="s-txt"><a href="https://www.instalki.pl/news/wearables/google-inteligentne-okulary-przedsprzedaz/" target="_blank" rel="noopener" hreflang="pl">Czołowi projektanci i mnóstwo technologii. Tyle kosztują okulary od Google</a><span class="s-lead">Google, Samsung i czołowi producenci oprawek nie biorą jeńców.</span><span class="s-auth">aut. Piotr Malinowski</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T08:25:39+00:00">09:25</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-ac05efeab92f" data-key="ac05efeab92f" data-code="EVT-1407" data-n="2" data-latest="2026-11-13T14:30:23+00:00" data-cat="gry" data-ai-generated-title="true" data-search="microsoft confirms more original xbox games for pc with mouse and keyboard support microsoft potwierdza kolejne klasyki z pierwszego xboxa na pc microsoft confirms more original xbox games for pc with mouse and keyboard support 21 more xbox classics are now officially playable on pc – including 11 star wars games" style="--i:31">
+    <a class="thumb" href="/techagregator/podsumowanie/ac05efeab92f/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/e81561be15f7-1b67e2.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/e81561be15f7-1b67e2.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/e81561be15f7-1b67e2.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-1407</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/ac05efeab92f/">Microsoft potwierdza kolejne klasyki z pierwszego Xboxa na PC</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="ac05efeab92f"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-ac05efeab92f" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T09:57:00+00:00" data-t0="2026-11-13T09:57:00+00:00" title="pierwsza publikacja 13.11.2026 10:57">wczoraj, 10:57</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/ac05efeab92f/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-ac05efeab92f" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/kitguru.png" alt="" width="14" height="14" loading="lazy">KitGuru</span>
+        <span class="s-txt"><a href="https://www.kitguru.net/gaming/joao-silva/microsoft-confirms-more-original-xbox-games-for-pc-with-mouse-and-keyboard-support/" target="_blank" rel="noopener" hreflang="en">Microsoft confirms more original Xbox games for PC with mouse and keyboard support</a><span class="s-lead">Just one day after a leak revealed a new wave of original Xbox games heading to PC, Microsoft has officially...</span><span class="s-auth">aut. João Silva</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T14:30:23+00:00">15:30</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/notebookcheck.png" alt="" width="14" height="14" loading="lazy">Notebookcheck</span>
+        <span class="s-txt"><a href="https://www.notebookcheck.net/21-more-Xbox-classics-are-now-officially-playable-on-PC-including-11-Star-Wars-games.1449576.0.html" target="_blank" rel="noopener" hreflang="en">21 more Xbox classics are now officially playable on PC - including 11 Star Wars games</a><span class="s-lead">Microsoft is bringing 21 more original Xbox classics to PC.</span><span class="s-auth">aut. Marius Müller</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T09:57:00+00:00">10:57</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-dd04e0cdbcfb" data-key="dd04e0cdbcfb" data-code="EVT-7323" data-n="2" data-latest="2026-11-13T13:53:31+00:00" data-cat="inne" data-ai-generated-title="true" data-search="select &#39;apple home collection&#39; accessories now available to order ruszyły zamówienia przedpremierowe na akcesoria apple home collection select &#39;apple home collection&#39; accessories now available to order first apple home collection devices can now be ordered" style="--i:32">
+    <a class="thumb" href="/techagregator/podsumowanie/dd04e0cdbcfb/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/7d12aec0926e-461fdf.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/7d12aec0926e-461fdf.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/7d12aec0926e-461fdf.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-7323</span><span class="cat">TECHNOLOGIA</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/dd04e0cdbcfb/">Ruszyły zamówienia przedpremierowe na akcesoria Apple Home Collection</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="dd04e0cdbcfb"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-dd04e0cdbcfb" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T13:10:25+00:00" data-t0="2026-11-13T13:10:25+00:00" title="pierwsza publikacja 13.11.2026 14:10">wczoraj, 14:10</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/dd04e0cdbcfb/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-dd04e0cdbcfb" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/macrumors.png" alt="" width="14" height="14" loading="lazy">MacRumors</span>
+        <span class="s-txt"><a href="https://www.macrumors.com/2026/11/13/apple-home-collection-orders-begin/" target="_blank" rel="noopener" hreflang="en">Select &#39;Apple Home Collection&#39; Accessories Now Available to Order</a><span class="s-lead">The first three HomeView -compatible smart home accessories in the Apple Home Collection are available to...</span><span class="s-auth">aut. Joe Rossignol</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T13:53:31+00:00">14:53</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/appleinsider.png" alt="" width="14" height="14" loading="lazy">AppleInsider</span>
+        <span class="s-txt"><a href="https://appleinsider.com/articles/26/11/13/first-apple-home-collection-devices-can-now-be-ordered?utm_source=rss" target="_blank" rel="noopener" hreflang="en">First Apple Home Collection devices can now be ordered</a><span class="s-lead">Apple has opened pre-orders for three of its new smart home accessories, the LG-branded cameras that are due...</span><span class="s-auth">aut. William Gallagher</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T13:10:25+00:00">14:10</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-cc63e755ea2d" data-key="cc63e755ea2d" data-code="EVT-6013" data-n="2" data-latest="2026-11-13T13:24:02+00:00" data-cat="gry" data-ai-generated-title="false" data-search="xbox owners are getting more customizations for backgrounds and the guide menu  new xbox update lets you move the guide menu and shuffle home backgrounds xbox owners are getting more customizations for backgrounds and the guide menu" style="--i:33">
+    <a class="thumb" href="/techagregator/podsumowanie/cc63e755ea2d/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/gry-1.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/gry-1.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/gry-1.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6013</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/cc63e755ea2d/">Xbox owners are getting more customizations for backgrounds and the Guide menu</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="cc63e755ea2d"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-cc63e755ea2d" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-12T23:00:00+00:00" data-t0="2026-11-12T23:00:00+00:00" title="pierwsza publikacja 13.11.2026 00:00">wczoraj, 00:00</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-cc63e755ea2d" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/new-xbox-update-lets-you-move-the-guide-menu-and-shuffle-home-backgrounds/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">New Xbox update lets you move the Guide menu and shuffle Home backgrounds</a><span class="s-auth">aut. Pulasthi Ariyasinghe</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T13:24:02+00:00">14:24</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/verge.png" alt="" width="14" height="14" loading="lazy">The Verge</span>
+        <span class="s-txt"><a href="https://www.theverge.com/news/1032396/xbox-dashboard-guide-menu-right-side-background-shuffle-feature" target="_blank" rel="noopener" hreflang="en">Xbox owners are getting more customizations for backgrounds and the Guide menu</a><span class="s-auth">aut. Tom Warren</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-12T23:00:00+00:00">00:00</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-2ecba888fd08" data-key="2ecba888fd08" data-code="EVT-8744" data-n="2" data-latest="2026-11-13T10:07:00+00:00" data-cat="gry" data-ai-generated-title="true" data-search="gta 6 za darmo od inpostu. grę na ps5 odbierzesz w aplikacji inpost udostępnia kody na gta 6 w wersji na playstation 5 inpost rozdaje kody na gta 6 w wersji playstation 5. jak je uzyskać? gta 6 za darmo od inpostu. grę na ps5 odbierzesz w aplikacji" style="--i:34">
+    <a class="thumb" href="/techagregator/podsumowanie/2ecba888fd08/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/fallback/gry-1.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/fallback/gry-1.webp" type="image/webp">
+    <img src="/techagregator/static/img/fallback/gry-1.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-8744</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/2ecba888fd08/">InPost udostępnia kody na GTA 6 w wersji na PlayStation 5</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="2ecba888fd08"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-2ecba888fd08" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-13T09:55:54+00:00" data-t0="2026-11-13T09:55:54+00:00" title="pierwsza publikacja 13.11.2026 10:55">wczoraj, 10:55</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/2ecba888fd08/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-2ecba888fd08" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/spidersweb.png" alt="" width="14" height="14" loading="lazy">Spider&#39;s Web</span>
+        <span class="s-txt"><a href="https://spidersweb.pl/2026/11/inpost-gta-6-kody-incoiny-aplikacja-jak-zdobyc-jak-wymienic.html" target="_blank" rel="noopener" hreflang="pl">InPost rozdaje kody na GTA 6 w wersji PlayStation 5. Jak je uzyskać?</a><span class="s-auth">aut. Paweł Grabowski</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T10:07:00+00:00">11:07</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/androidcompl.png" alt="" width="14" height="14" loading="lazy">Android.com.pl</span>
+        <span class="s-txt"><a href="https://android.com.pl/tech/1104546-gta-6-za-darmo-inpost-aplikacja/" target="_blank" rel="noopener" hreflang="pl">GTA 6 za darmo od InPostu. Grę na PS5 odbierzesz w aplikacji</a><span class="s-auth">aut. Redakcja Android.com.pl</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-13T09:55:54+00:00">10:55</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+  <li class="evt frame" id="evt-c1baf9fb5624" data-key="c1baf9fb5624" data-code="EVT-6196" data-n="2" data-latest="2026-11-13T00:47:59+00:00" data-cat="gry" data-ai-generated-title="true" data-search="microsoft brings 21 more og xbox games to pc and finally adds achievements microsoft udostępnia 21 dodatkowych gier z konsoli xbox na pc microsoft brings 21 more og xbox games to pc via backward compatibility microsoft brings 21 more og xbox games to pc and finally adds achievements" style="--i:35">
+    <a class="thumb" href="/techagregator/podsumowanie/c1baf9fb5624/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/8c4ef48cf2a9-b71cf9.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/8c4ef48cf2a9-b71cf9.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/8c4ef48cf2a9-b71cf9.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6196</span><span class="cat">GRY</span></div>
+      <h2 class="evt-title"><span class="tag ai-t" title="Tytuł wygenerowany przez AI">TYTUŁ AI</span> <a href="/techagregator/podsumowanie/c1baf9fb5624/">Microsoft udostępnia 21 dodatkowych gier z konsoli Xbox na PC</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="c1baf9fb5624"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-c1baf9fb5624" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-12T22:30:01+00:00" data-t0="2026-11-12T22:30:01+00:00" title="pierwsza publikacja 12.11.2026 23:30">12.11, 23:30</time>
+      
+      <a class="btn frame" data-btn href="/techagregator/podsumowanie/c1baf9fb5624/"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>PODSUMOWANIE AI</span></a>
+      
+    </div>
+    <ul class="srcs" id="s-c1baf9fb5624" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/thurrott.png" alt="" width="14" height="14" loading="lazy">Thurrott</span>
+        <span class="s-txt"><a href="https://www.thurrott.com/games/xbox/343819/microsoft-brings-21-more-og-xbox-games-to-pc-via-backward-compatibility" target="_blank" rel="noopener" hreflang="en">Microsoft Brings 21 More OG XBOX Games to PC Via Backward Compatibility</a><span class="s-lead">Four months after the initial release of original XBOX games on PC via Backward Compatibility, there are now...</span><span class="s-auth">aut. Paul Thurrott</span></span>
+        <span class="s-meta"><time datetime="2026-11-13T00:47:59+00:00">01:47</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/neowin.png" alt="" width="14" height="14" loading="lazy">Neowin</span>
+        <span class="s-txt"><a href="https://www.neowin.net/news/microsoft-brings-21-more-og-xbox-games-to-pc-and-finally-adds-achievements/?utm_source=rss" target="_blank" rel="noopener" hreflang="en">Microsoft brings 21 more OG Xbox games to PC and finally adds achievements</a><span class="s-auth">aut. Pulasthi Ariyasinghe</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-12T22:30:01+00:00">23:30</time></span>
+      </li>
+      
+    </ul>
+</li>
+  <li class="ad-row"><aside class="ad frame ticks-box " aria-label="REKLAMA"><span class="lbl">REKLAMA</span></aside></li>
+
+  <li class="evt frame" id="evt-1a628d755dc3" data-key="1a628d755dc3" data-code="EVT-6355" data-n="2" data-latest="2026-11-12T23:32:00+00:00" data-cat="ai" data-ai-generated-title="false" data-search="meta&#39;s muse can now make calls on your behalf (if you have a paid subscription)  meta&#39;s muse can now make calls on your behalf (if you have a paid subscription) muse can now place calls to us businesses — if you pay" style="--i:36">
+    <a class="thumb" href="/techagregator/podsumowanie/1a628d755dc3/" tabindex="-1" aria-hidden="true"><figure class="media ticks sm">
+  <div class="media-in">
+  
+  <picture>
+    <source srcset="/techagregator/static/img/clusters/680b55a68af9-af9b56.avif" type="image/avif">
+    <source srcset="/techagregator/static/img/clusters/680b55a68af9-af9b56.webp" type="image/webp">
+    <img src="/techagregator/static/img/clusters/680b55a68af9-af9b56.webp" alt="" width="800" height="600" loading="lazy" decoding="async">
+  </picture>
+  
+  </div>
+  <span class="media-ai" title="Ilustracja wygenerowana przez AI">AI</span>
+</figure></a>
+    <div class="evt-main">
+      <div class="evt-code"><span class="code">EVT-6355</span><span class="cat">AI</span></div>
+      <h2 class="evt-title"><a href="/techagregator/podsumowanie/1a628d755dc3/">Meta&#39;s Muse can now make calls on your behalf (if you have a paid subscription)</a></h2>
+      <div class="evt-meta">
+        <span class="chip src-pl" data-src-key="1a628d755dc3"><span class="roll">2</span>&nbsp;<span class="srcw">ŹRÓDŁA</span></span>
+        <button class="xpand" type="button" aria-expanded="false" aria-controls="s-1a628d755dc3" aria-label="Pokaż listę źródeł">LISTA <svg class="ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="evt-side">
+      <time class="tplus" datetime="2026-11-12T22:22:28+00:00" data-t0="2026-11-12T22:22:28+00:00" title="pierwsza publikacja 12.11.2026 23:22">12.11, 23:22</time>
+      
+      <span class="btn frame off" data-btn title="Za mało źródeł dopuszczonych do AI (serwisy w trybie tylko link nie są przekazywane do AI)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M14.5 2.5H6.5v19h11V5.5z"/><path d="M14.5 2.5v3h3M9 10h6M9 13.5h6M9 17h4"/></svg><span>AI NIEDOSTĘPNE</span></span>
+      
+    </div>
+    <ul class="srcs" id="s-1a628d755dc3" hidden>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/engadget.png" alt="" width="14" height="14" loading="lazy">Engadget</span>
+        <span class="s-txt"><a href="https://www.engadget.com/2315525/metas-muse-can-now-make-calls-on-your-behalf-if-you-have-a-paid-subscription/" target="_blank" rel="noopener" hreflang="en">Meta&#39;s Muse can now make calls on your behalf (if you have a paid subscription)</a><span class="s-auth">aut. staff@engadget.com</span></span>
+        <span class="s-meta"><span class="tag" title="Do AI trafił wyłącznie nagłówek">NAGŁÓWEK</span>
+<time datetime="2026-11-12T23:32:00+00:00">00:32</time></span>
+      </li>
+      
+      <li>
+        <span class="s-src"><img class="fav" src="/techagregator/static/favicons/techcrunch.png" alt="" width="14" height="14" loading="lazy">TechCrunch</span>
+        <span class="s-txt"><a href="https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/" target="_blank" rel="noopener" hreflang="en">Muse can now place calls to US businesses - if you pay</a><span class="s-auth">aut. Sarah Perez</span></span>
+        <span class="s-meta"><span class="tag" title="Nagłówek i link - bez udziału w podsumowaniu AI">TYLKO LINK</span><time datetime="2026-11-12T22:22:28+00:00">23:22</time></span>
+      </li>
+      
+    </ul>
+</li>
+  
+
+</ol>
+
+</main>
+</div>
+<footer class="foot">
+  <p>Agregator nagłówków: pokazujemy tytuły, linki i dla części serwisów skrót leadu (do ok. 110 znaków). Niektóre serwisy pokazujemy wyłącznie jako nagłówek z linkiem. Pełne artykuły czytasz u wydawców; prawa do treści należą do wydawców.</p>
+  <p>Podsumowania i tytuły wydarzeń oznaczone jako AI są generowane automatycznie i mogą zawierać błędy. Nazwy i ikony serwisów służą wyłącznie identyfikacji źródła; nie jesteśmy powiązani z wydawcami. Nie używamy zdjęć wydawców - grafiki są poglądowe. <a href="/techagregator/jak-powstaja-podsumowania/">Jak powstają podsumowania</a>.</p>
+</footer>
+
+<button class="sonda parked" id="sonda" type="button" aria-controls="sonda-log" aria-expanded="false" aria-label="Sonda - dziennik zdarzeń na żywo" title="Sonda - dziennik zdarzeń na żywo" hidden>
+  <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><circle class="sd-ring" cx="10" cy="10" r="6.5"/><path class="sd-cross" d="M10 .5v5M10 14.5v5M.5 10h5M14.5 10h5"/><circle class="sd-core" cx="10" cy="10" r="2.2"/></svg>
+</button>
+<div class="sonda-label" id="sonda-label" aria-hidden="true" hidden></div>
+<section class="sonda-log frame" id="sonda-log" role="dialog" aria-modal="false" aria-labelledby="sonda-log-h" hidden>
+  <header><h2 class="lbl sec" id="sonda-log-h">DZIENNIK SONDY</h2><button type="button" class="sonda-x" data-sonda-close aria-label="Zamknij"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+  <ol class="sonda-list"></ol>
+  <p class="sonda-empty mute" hidden>Brak zdarzeń.</p>
+</section>
+<div class="sr-only" id="sonda-live" aria-live="polite" aria-atomic="true"></div>
+<script id="sonda-cfg" type="application/json">{"base": "/techagregator", "eventsUrl": "/techagregator/events.json", "i18n": {"analysis": "ANALIZA {n} {w}...", "burst": "{n} {w} \u00b7 DZIENNIK", "ev2": "ZDARZENIA", "ev5": "ZDARZE\u0143", "log_done_error": "b\u0142\u0105d generowania", "log_done_ok": "podsumowanie gotowe", "log_done_rejected": "podsumowanie odrzucone przez weryfikacj\u0119", "log_new": "nowe wydarzenie \u00b7 {n}", "log_src": "{d} {w}", "log_start": "analiza {n} {w}...", "new": "NOWE", "ready": "GOTOWE", "src_gen": "\u0179R\u00d3DE\u0141", "src_gen1": "\u0179R\u00d3D\u0141A", "src_pl": 1, "test": "TEST", "w1": "\u017ar\u00f3d\u0142o", "w2": "\u017ar\u00f3d\u0142a", "w5": "\u017ar\u00f3de\u0142", "wg": "\u017ar\u00f3de\u0142", "wg1": "\u017ar\u00f3d\u0142a"}, "lang": "pl", "last": 2935, "post": false, "static": true}</script>
+<script src="/techagregator/static/app.js?v=v12-0" defer></script>
+<script src="/techagregator/static/bot.js?v=v8-1" defer></script>
+<script src="/techagregator/static/sonda.js?v=v9-0" defer></script>
+</body>
+</html>
